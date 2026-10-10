@@ -1,107 +1,149 @@
-# 微动漫项目 ·《满分的我》
+<div align="center">
+  <img src=".github/assets/banner.jpg" alt="满分的我 · The Perfect Me" width="100%">
 
-> **The Perfect Me** ｜ 副标题：如果所有人都喜欢那个完美的我，谁来喜欢真正的我？
-> 参赛信息：**高一1班 · 朱明萱 · 满分的我**
+  <h1>满分的我 · The Perfect Me</h1>
 
-| 项目 | 内容 |
+  <p><b>如果所有人都喜欢那个完美的我，谁来喜欢真正的我？</b></p>
+
+  <p>
+    <a href="https://zhubao315.github.io/perfectme/"><img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-perfectme-7FD8FF?logo=githubpages&logoColor=white" alt="在线网站"></a>
+    <img src="https://img.shields.io/badge/%E7%B1%BB%E5%9E%8B-%E5%8E%9F%E5%88%9B%202D%20%E5%BE%AE%E5%8A%A8%E6%BC%AB-F0C888" alt="原创2D微动漫">
+    <img src="https://img.shields.io/badge/%E6%97%B6%E9%95%BF-3%2730%22-5B6B7C" alt="时长">
+    <img src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-%E6%A0%A1%E5%9B%AD%E5%BF%83%E7%90%86%C2%B7%E6%88%90%E9%95%BF-7FD8FF" alt="主题">
+    <img src="https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-9FB2CA" alt="中文">
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/badge/%E5%9B%BE%E5%83%8F-Qwen--Image--2.1-5B6B7C?logo=openai&logoColor=white" alt="Qwen-Image-2.1">
+    <img src="https://img.shields.io/badge/%E9%85%8D%E4%B9%90-ACE--Step-F2A65A" alt="ACE-Step">
+    <img src="https://img.shields.io/badge/%E9%85%8D%E9%9F%B3-Qwen3--TTS-7FD8FF" alt="Qwen3-TTS">
+    <img src="https://img.shields.io/badge/%E5%8A%A8%E7%94%BB-OpenToonz-FF5A5F" alt="OpenToonz">
+    <img src="https://img.shields.io/badge/%E5%89%AA%E8%BE%91-Kdenlive-5B6B7C" alt="Kdenlive">
+    <img src="https://img.shields.io/badge/%E5%90%88%E6%88%90-FFmpeg-007808?logo=ffmpeg&logoColor=white" alt="FFmpeg">
+  </p>
+
+  <p>
+    <a href="https://zhubao315.github.io/perfectme/">🌐 <b>在线网站</b></a> ·
+    <a href="https://zhubao315.github.io/perfectme/10-宣传网站/">🎬 观看成片</a> ·
+    <a href="00-文档总览.md">📖 项目文档</a> ·
+    <a href="08-宣传物料/README.md">🎨 宣传物料</a>
+  </p>
+</div>
+
+---
+
+## ✨ 一句话
+
+> **99 个赞，0 个人知道他不开心。** 他把自己修得完美无缺，却越来越不喜欢自己——直到朋友一句"那你不用在我面前装没事"。
+
+《满分的我》是一部约 **3 分 30 秒**的**原创 2D 微动漫**。以 **自我差异理论**（Self-Discrepancy Theory, Higgins 1987）为内核，讲述每个在"别人眼中的我"与"真实的我"之间拉扯的少年。作品想说的不是"不要努力"，而是——**你可以努力成为更好的自己，但不必先变得完美，才配得到认可。**
+
+## 🌐 在线访问
+
+| | |
 |---|---|
-| 作品名称 | 满分的我 |
-| 题材类型 | 校园心理 · 成长 · 原创 2D 动漫 |
-| 画面风格 | **轻薄半赛璐 / 淡彩赛璐（Soft Cel + Paper Texture）**——彩色线稿、极淡水彩晕染、纸张颗粒、漫射空气光 |
-| 核心理论 | 自我差异理论（Self-Discrepancy Theory，E. Tory Higgins，1987） |
-| 主要角色 | 林一（现实自我）· 一林（理想/应该自我）· 陈晓（朋友） |
-| 主要场景 | 洗手间 · 教室 · 卧室书桌 · 操场 |
-| 片长 | 约 3 分 30 秒（≤5 分钟） |
-| 制作软件 | 图像 Qwen-Image-2.1 · 配乐 ACE-Step · 配音 Qwen3-TTS · 音效 自研合成 · 绘修 Krita · 动画 OpenToonz · 剪辑 Kdenlive · 合成 FFmpeg |
-| 片尾设计 | 电影式**滚动字幕**（心理学理念 · 制作工具与组件 · 祝福 · 版权）+ 末帧居中「感谢观看」定格 |
-| 成片文件 | `07-成片/高一1班-朱明萱-满分的我.mp4`（字幕版）· `…满分的我(配音版).mp4`（Qwen3-TTS 配音版） |
+| 🖥️ **宣传网站** | **<https://zhubao315.github.io/perfectme/>** |
+| 🎬 成片（配音版） | <https://zhubao315.github.io/perfectme/10-宣传网站/> |
+| 📄 文档总览（网页/PDF） | [`00-文档总览.html`](00-文档总览.html) ｜ [`00-文档总览.pdf`](00-文档总览.pdf) |
 
-## 主题立意
+## 🖼️ 预览
 
-作品要传递的不是"不要追求优秀"，而是：
+**宣传网站**
+<br>
+<img src=".github/assets/preview.jpg" alt="宣传网站预览" width="100%">
 
-> **你可以努力成为更好的自己，但不必先变得完美，才配得到认可。**
+**剧照**
+<br>
+<img src=".github/assets/stills.jpg" alt="剧照" width="100%">
 
-## 文档导航
+**角色**
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="10-宣传网站/assets/char-linyi.jpg" width="100%"><br><b>林一</b><br><sub>现实自我 · 主人公</sub></td>
+    <td align="center" width="33%"><img src="10-宣传网站/assets/char-yilin.jpg" width="100%"><br><b>一林</b><br><sub>理想 / 应该自我</sub></td>
+    <td align="center" width="33%"><img src="10-宣传网站/assets/char-chenxiao.jpg" width="100%"><br><b>陈晓</b><br><sub>朋友 · 陪伴者</sub></td>
+  </tr>
+</table>
 
-> 完整文档入口见 **[`00-文档总览.md`](00-文档总览.md)**（目录导航 / 文档地图 / 阅读路径 / 版本记录）。
+<p align="center">
+  <img src="08-宣传物料/01-主视觉/主海报-竖版.png" alt="主海报" width="46%">
+</p>
 
-| 阶段 | 文档 |
+## 🎬 故事
+
+高一男生**林一**，是班里"人缘很好、成绩不错"的那类人。社交平台上，他的照片被无数个赞包围；可镜头拉近，他独自坐在洗手间隔间里，屏幕里是阳光灿烂的自拍，脸上却没有笑。
+
+由"想被喜欢"的渴望凝聚而成的虚拟自我**一林**不断提醒他：别让他们看出你不开心。他越来越努力，却越来越不喜欢自己。直到朋友**陈晓**一句"**那你不用在我面前装没事**"，让他第一次发现——真实的自己，也可以被接纳。
+
+## 🧩 制作流程
+
+```text
+① 策划    完整剧本 ─▶ 分镜表 ─▶ 逐镜动画分镜
+② 视觉    角色设定 + 6 轮提示词 ─▶ Qwen-Image-2.1 ─▶ 原创角色/场景/分镜图
+③ 动画    分镜图 ─▶ 呼吸式镜头运动 (ffmpeg) / OpenToonz ─▶ 动态片段
+④ 音频    ACE-Step(配乐) + Qwen3-TTS(配音) + 自研音效 ─▶ 多轨
+⑤ 合成    FFmpeg / Kdenlive ─▶ 成片（字幕版 / 配音版）
+⑥ 宣传    主视觉 + 文案 + 预告片 ─▶ 宣传网站 & 物料
+```
+
+## 🛠️ 技术栈
+
+| 环节 | 工具 |
 |---|---|
-| 策划 | [完整剧本](01-脚本/满分的我-完整剧本.md) · [分镜表](01-脚本/满分的我-分镜表.md) · [逐镜动画分镜表](01-脚本/满分的我-逐镜动画分镜表.md) |
-| 视觉 | [人物设定](03-角色设定/人物设定.md) · [6 轮提示词](02-提示词/满分的我-五轮提示词.md) |
-| 音频 | [音频与音乐说明](05-音频/音频与音乐说明.md) · [配音方案 Qwen3-TTS](05-音频/配音方案-Qwen3-TTS.md) |
-| 工程 | [制作流程与工程说明](06-工程源文件/制作流程与工程说明.md) |
-| 宣传 | [宣传物料](08-宣传物料/README.md) · [宣传文案包](08-宣传物料/02-文案/《满分的我》宣传文案包.md) · [投稿清单与合规核对](08-宣传物料/02-文案/投稿清单与合规核对.md) |
+| 角色 / 场景 / 分镜图 | **Qwen-Image-2.1**（本地，依据原创提示词） |
+| 配乐 | **ACE-Step v1**（本地，纯器乐提示词） |
+| 配音 | **Qwen3-TTS**（本地 GPUStack，VoiceDesign 三音色 + 播音员旁白） |
+| 音效 | 自研程序化合成（纯 Python） |
+| 绘修 / 动画 | Krita · OpenToonz |
+| 剪辑 / 合成 | Kdenlive · FFmpeg |
+| 宣传网站 | 原生 HTML / CSS / JS（Canvas 粒子、视差、滚动揭示，自包含） |
 
-## 目录结构
+## 📂 目录结构
 
-```
-/oc/mov
-├── 00-文档总览.md               文档统一入口（导航 / 文档地图 / 规范）
-├── 00-文档总览.html            文档网页版（含配图，可打印为 PDF）
-├── 00-文档总览.pdf             文档 PDF 版（A4，12 页）
-├── README.md                    本文件，项目主页
-├── 01-脚本/
-│   ├── 满分的我-完整剧本.md       五幕完整剧本（含台词、旁白、音效）
-│   ├── 满分的我-分镜表.md         镜头级 storyboard（景别/时长/画面/声音/字幕）
-│   └── 满分的我-逐镜动画分镜表.md  逐镜运动/微动/光效/字幕动效
-├── 02-提示词/
-│   └── 满分的我-五轮提示词.md     供生图/生片使用的 6 轮提示词（≥5 轮）
-├── 03-角色设定/
-│   └── 人物设定.md               三名原创角色的外形/性格/色彩规范
-├── 04-分镜图/
-│   ├── 角色/                     角色设定图（原创）
-│   ├── 场景/                     场景背景图（原创）
-│   └── 镜头/                     各分镜关键帧（18 主镜 + 8 表情/动作变体）
-├── 05-音频/
-│   ├── 音频与音乐说明.md          配乐（ACE-Step）与音效清单
-│   ├── 配音方案-Qwen3-TTS.md      音色设计 / 台词 / 多轨混音 / 成片
-│   ├── BGM/                      原创配乐（开场/冲突/结尾）
-│   ├── 配音/                      逐句配音与试音（Qwen3-TTS）
-│   └── 多轨/                      A1 林一 · A2 一林 · A3 陈晓 · A4 配乐 · A5 音效 · A6 旁白
-├── 06-工程源文件/
-│   ├── 制作流程与工程说明.md       工具链与 Kdenlive/OpenToonz/Krita 复现步骤
-│   ├── 满分的我-工程.mlt          Kdenlive 工程（字幕版）
-│   └── 满分的我-配音版.mlt        Kdenlive 工程（V1 + A1–A6 配音版）
-├── 07-成片/                      最终 mp4 成片（字幕版 / 配音版）+ 字幕文件
-├── 08-宣传物料/                  主视觉/角色卡/九宫格/展架/文案/预告片/落地页
-├── 09-文档配图/                  统一风格的文档插画（Qwen-Image-2.1 生成）
-├── 10-宣传网站/                  单页宣传网站（炫酷动效，自包含）
-└── build/                       可复现脚本与中间产物
+```text
+.
+├── index.html                   宣传网站入口（跳转）
+├── 00-文档总览.md / .html / .pdf 文档总入口
+├── 01-脚本/                     剧本 · 分镜表 · 逐镜动画分镜表
+├── 02-提示词/                   6 轮原创提示词
+├── 03-角色设定/                 三名原创角色设定
+├── 04-分镜图/                   角色 / 场景 / 镜头 原创图像
+├── 05-音频/                     配乐 · 配音 · 多轨
+├── 06-工程源文件/               Kdenlive 工程 (.mlt)
+├── 07-成片/                     成片（字幕版 / 配音版）+ 字幕
+├── 08-宣传物料/                 主视觉 · 文案 · 预告片 · 落地页
+├── 09-文档配图/                 统一风格文档插画
+├── 10-宣传网站/                 炫酷单页宣传网站
+└── build/                      可复现脚本与中间产物
 ```
 
-## 一键复现
+## 🚀 一键复现
 
 ```bash
-cd /oc/mov
-python3 build/build.py        # 合成字幕版成片 → 07-成片/高一1班-朱明萱-满分的我.mp4
-python3 build/ace_gen.py      # 生成 ACE-Step 配乐
-python3 build/tts_dub.py      # 生成 Qwen3-TTS 配音（逐句 + 整轨）
-python3 build/sfx_gen.py      # 生成 A5 音效
+python3 build/build.py        # 合成字幕版成片
+python3 build/ace_gen.py      # 生成配乐（ACE-Step）
+python3 build/tts_dub.py      # 生成配音（Qwen3-TTS）
+python3 build/sfx_gen.py      # 生成音效
 python3 build/mix_dub.py      # 多轨混音 + 配音版成片
-python3 build/make_mlt.py     # 生成字幕版 Kdenlive 工程
-python3 build/make_mlt_dub.py # 生成配音版 Kdenlive 工程
-python3 build/promo_gen.py    # 生成宣传主视觉/海报/角色卡等
-python3 build/make_trailer.py # 生成预告片
-python3 build/docs_figures.py # 生成文档配图（09-文档配图/）
-python3 build/html2pdf.py     # 渲染 00-文档总览.pdf
-python3 build/site_build.py   # 准备宣传网站资源（10-宣传网站/assets/）
+python3 build/promo_gen.py    # 宣传主视觉 / 海报 / 角色卡
+python3 build/make_trailer.py # 预告片
+python3 build/site_build.py   # 准备宣传网站资源
 ```
 
-## 宣传网站
+> 本地预览网站：`cd 10-宣传网站 && python3 -m http.server 8791`
 
-```bash
-cd /oc/mov/10-宣传网站 && python3 -m http.server 8791
-# 打开 http://127.0.0.1:8791/
-```
+## 📖 文档
 
-`10-宣传网站/index.html` 为自包含单页站点（粒子光点 / 视差 / 滚动揭示 / 角色音色试听 /
-预告片与成片播放 / 三面镜子交互 / 金句滚动），资源在 `10-宣传网站/assets/`。
+完整文档见 **[`00-文档总览.md`](00-文档总览.md)**：剧本、分镜、角色、提示词、音频、工程、宣传、投稿合规一应俱全。
 
-## 原创性声明
+## ⚖️ 原创声明
 
-本作品的角色形象、场景、剧情、台词、分镜、提示词均为**原创设计**，
-不含任何网络下载、搜集或破解的第三方素材；角色与场景图像由本地
-**Qwen-Image-2.1** 依据本项目原创提示词生成，配乐由本地 **ACE-Step** 生成，
-配音由本地 **Qwen3-TTS** 合成，音效由本项目脚本程序化合成。
+角色、场景、剧情、台词、分镜、提示词均为**原创设计**；角色与场景图像由本地 **Qwen-Image-2.1** 依据本项目原创提示词生成，配乐由本地 **ACE-Step** 生成，配音由本地 **Qwen3-TTS** 合成，音效由本项目脚本程序化合成。**不含任何网络下载、搜集或破解的第三方素材。**
+
+---
+
+<div align="center">
+  <p><i>你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</i></p>
+  <p><b>《满分的我》</b> · 高一1班 · 朱明萱 · 原创 2D 微动漫</p>
+  <p><sub>© 2026 朱明萱 · 保留所有权利</sub></p>
+</div>
