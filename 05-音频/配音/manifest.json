@@ -1,0 +1,252 @@
+[
+  {
+    "id": "V01",
+    "speaker": "旁白",
+    "text": "他们都说，我过得真好。",
+    "start": 8.0,
+    "file": "V01_旁白.wav",
+    "dur": 2.72,
+    "window": 3.5,
+    "overflow": -0.78
+  },
+  {
+    "id": "V02",
+    "speaker": "旁白",
+    "text": "镜头拉开——他独自坐在洗手间隔间里，屏幕里阳光灿烂，脸上却没有笑。",
+    "start": 12.8,
+    "file": "V02_旁白.wav",
+    "dur": 9.52,
+    "window": 5.2,
+    "overflow": 4.32
+  },
+  {
+    "id": "V03",
+    "speaker": "旁白",
+    "text": "每一个真实的瞬间，都被剪成了一张完美的照片。",
+    "start": 29.3,
+    "file": "V03_旁白.wav",
+    "dur": 4.64,
+    "window": 3.4,
+    "overflow": 1.24
+  },
+  {
+    "id": "V04",
+    "speaker": "一林",
+    "text": "今天这张拍得不错。大家一定会喜欢。",
+    "start": 36.3,
+    "file": "V04_一林.wav",
+    "dur": 2.48,
+    "window": 4.5,
+    "overflow": -2.02
+  },
+  {
+    "id": "V05",
+    "speaker": "林一",
+    "text": "那如果我今天不开心呢？",
+    "start": 41.3,
+    "file": "V05_林一.wav",
+    "dur": 2.88,
+    "window": 2.4,
+    "overflow": 0.48
+  },
+  {
+    "id": "V06",
+    "speaker": "一林",
+    "text": "那就不要让他们看出来。",
+    "start": 43.8,
+    "file": "V06_一林.wav",
+    "dur": 1.2,
+    "window": 2.5,
+    "overflow": -1.3
+  },
+  {
+    "id": "V07",
+    "speaker": "林一",
+    "text": "你从来不累吗？",
+    "start": 46.8,
+    "file": "V07_林一.wav",
+    "dur": 1.2,
+    "window": 2.5,
+    "overflow": -1.3
+  },
+  {
+    "id": "V08",
+    "speaker": "一林",
+    "text": "我不能累。我们要优秀，要自律，要让所有人觉得我们很好。",
+    "start": 49.4,
+    "file": "V08_一林.wav",
+    "dur": 5.52,
+    "window": 3.9,
+    "overflow": 1.62
+  },
+  {
+    "id": "V09",
+    "speaker": "林一",
+    "text": "可我考试会失误，也会嫉妒别人。",
+    "start": 53.8,
+    "file": "V09_林一.wav",
+    "dur": 2.8,
+    "window": 3.0,
+    "overflow": -0.2
+  },
+  {
+    "id": "V10",
+    "speaker": "一林",
+    "text": "那你就更应该努力。你忘了别人有多喜欢我们吗？",
+    "start": 56.9,
+    "file": "V10_一林.wav",
+    "dur": 3.6,
+    "window": 3.4,
+    "overflow": 0.2
+  },
+  {
+    "id": "V12",
+    "speaker": "林一",
+    "text": "如果我做不到呢？",
+    "start": 68.8,
+    "file": "V12_林一.wav",
+    "dur": 1.92,
+    "window": 4.2,
+    "overflow": -2.28
+  },
+  {
+    "id": "V13",
+    "speaker": "旁白",
+    "text": "现实的我。／理想中的我。／我以为自己必须成为的我。",
+    "start": 88.8,
+    "file": "V13_旁白.wav",
+    "dur": 5.76,
+    "window": 7.5,
+    "overflow": -1.74
+  },
+  {
+    "id": "V14",
+    "speaker": "旁白",
+    "text": "心理学家希金斯提出的自我差异理论指出：当现实自我与理想、应该自我之间出现落差时，可能带来心理上的不适。",
+    "start": 96.8,
+    "file": "V14_旁白.wav",
+    "dur": 11.28,
+    "window": 8.9,
+    "overflow": 2.38
+  },
+  {
+    "id": "V15",
+    "speaker": "林一",
+    "text": "我一直以为，只要变成你，我就会喜欢自己。",
+    "start": 106.3,
+    "file": "V15_林一.wav",
+    "dur": 5.52,
+    "window": 3.5,
+    "overflow": 2.02
+  },
+  {
+    "id": "V16",
+    "speaker": "一林",
+    "text": "难道不是吗？",
+    "start": 109.9,
+    "file": "V16_一林.wav",
+    "dur": 1.36,
+    "window": 2.9,
+    "overflow": -1.54
+  },
+  {
+    "id": "V17",
+    "speaker": "林一",
+    "text": "可我越来越努力，为什么越来越不喜欢自己？",
+    "start": 113.3,
+    "file": "V17_林一.wav",
+    "dur": 3.92,
+    "window": 6.5,
+    "overflow": -2.58
+  },
+  {
+    "id": "V18",
+    "speaker": "一林",
+    "text": "那如果我们不完美了呢？",
+    "start": 120.3,
+    "file": "V18_一林.wav",
+    "dur": 1.6,
+    "window": 3.3,
+    "overflow": -1.7
+  },
+  {
+    "id": "V19",
+    "speaker": "林一",
+    "text": "那我们就做一个不完美的人。",
+    "start": 123.7,
+    "file": "V19_林一.wav",
+    "dur": 1.68,
+    "window": 3.1,
+    "overflow": -1.42
+  },
+  {
+    "id": "V20",
+    "speaker": "陈晓",
+    "text": "走啊，一起去操场？",
+    "start": 133.3,
+    "file": "V20_陈晓.wav",
+    "dur": 2.08,
+    "window": 3.0,
+    "overflow": -0.92
+  },
+  {
+    "id": "V21",
+    "speaker": "林一",
+    "text": "我最近其实过得不太好。总觉得自己不够优秀。",
+    "start": 136.4,
+    "file": "V21_林一.wav",
+    "dur": 5.12,
+    "window": 2.9,
+    "overflow": 2.22
+  },
+  {
+    "id": "V22",
+    "speaker": "陈晓",
+    "text": "那你不用在我面前装没事。",
+    "start": 139.8,
+    "file": "V22_陈晓.wav",
+    "dur": 1.84,
+    "window": 3.3,
+    "overflow": -1.46
+  },
+  {
+    "id": "V23",
+    "speaker": "陈晓",
+    "text": "走吧。今天不聊成绩。",
+    "start": 146.8,
+    "file": "V23_陈晓.wav",
+    "dur": 2.08,
+    "window": 2.5,
+    "overflow": -0.42
+  },
+  {
+    "id": "V24",
+    "speaker": "一林",
+    "text": "这次，不拍下来吗？",
+    "start": 152.8,
+    "file": "V24_一林.wav",
+    "dur": 1.6,
+    "window": 2.0,
+    "overflow": -0.4
+  },
+  {
+    "id": "V25",
+    "speaker": "林一",
+    "text": "不用。记得就好了。",
+    "start": 154.9,
+    "file": "V25_林一.wav",
+    "dur": 2.0,
+    "window": 2.0,
+    "overflow": 0.0
+  },
+  {
+    "id": "V26",
+    "speaker": "一林",
+    "text": "原来，我们不必一直满分。",
+    "start": 168.6,
+    "file": "V26_一林.wav",
+    "dur": 2.16,
+    "window": 4.2,
+    "overflow": -2.04
+  }
+]

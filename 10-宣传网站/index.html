@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>满分的我 · 原创 2D 微动漫 ｜ 高一1班 · 朱明萱</title>
+<meta name="description" content="如果所有人都喜欢那个完美的我，谁来喜欢真正的我？——原创校园心理微动漫《满分的我》">
+<meta property="og:title" content="满分的我 · 原创 2D 微动漫">
+<meta property="og:description" content="99 个赞，0 个人知道他不开心。">
+<meta property="og:image" content="assets/kv.jpg">
+<style>
+  :root{
+    --bg:#060a13; --ink:#eef4fc; --sub:#93a6c0;
+    --gold:#f0c888; --like:#ff5a5f;
+    --cold:#6b7f96; --cyan:#7fd8ff; --warm:#f2a65a;
+    --line:rgba(255,255,255,.10);
+    --glass:rgba(16,26,44,.55);
+    --serif:"Noto Serif CJK SC","Songti SC",Georgia,serif;
+    --sans:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:radial-gradient(120% 80% at 50% -10%,#101d33 0%,var(--bg) 55%) fixed;
+    color:var(--ink);font-family:var(--sans);line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+    cursor:default}
+  a{color:var(--gold);text-decoration:none}
+  h1,h2,h3{margin:0}
+  ::selection{background:rgba(240,200,136,.3)}
+  /* scroll bar */
+  ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#0a1120}
+  ::-webkit-scrollbar-thumb{background:#24344d;border-radius:10px}
+
+  /* ---------- layers ---------- */
+  #motes{position:fixed;inset:0;z-index:1;pointer-events:none}
+  .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+  .vignette{position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:radial-gradient(130% 100% at 50% 30%,transparent 55%,rgba(3,6,12,.85))}
+  #spot{position:fixed;z-index:3;width:640px;height:640px;left:0;top:0;pointer-events:none;translate:-50% -50%;
+    background:radial-gradient(circle,rgba(127,216,255,.10),transparent 62%);opacity:0;transition:opacity .4s}
+  .content{position:relative;z-index:4}
+
+  /* progress + nav */
+  #prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:20;background:linear-gradient(90deg,var(--cyan),var(--gold),var(--warm))}
+  nav{position:fixed;top:0;left:0;right:0;z-index:19;display:flex;align-items:center;justify-content:space-between;
+    padding:16px clamp(16px,4vw,48px);transition:.5s;backdrop-filter:blur(0px)}
+  nav.solid{background:rgba(6,10,19,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:10px;padding-bottom:10px}
+  nav .brand{font-family:var(--serif);font-size:18px;letter-spacing:.28em;color:#fff}
+  nav .brand b{color:var(--gold)}
+  nav .links{display:flex;gap:clamp(10px,2vw,26px);font-size:13.5px;letter-spacing:.08em}
+  nav .links a{color:var(--sub);position:relative;padding:4px 2px}
+  nav .links a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:.4s}
+  nav .links a:hover{color:#fff}nav .links a:hover:after{width:100%}
+  @media(max-width:760px){nav .links{display:none}}
+
+  /* preloader */
+  #pre{position:fixed;inset:0;z-index:60;background:#05080f;display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:22px;transition:opacity .8s,visibility .8s}
+  #pre.done{opacity:0;visibility:hidden}
+  #pre .pt{font-family:var(--serif);font-size:clamp(30px,6vw,54px);letter-spacing:.34em;
+    background:linear-gradient(90deg,#8fb6da,#fff,#f0c888);-webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:sh 3s linear infinite;background-size:220% auto}
+  @keyframes sh{to{background-position:220% center}}
+  #pre .bar{width:180px;height:1px;background:rgba(255,255,255,.14);overflow:hidden}
+  #pre .bar i{display:block;height:100%;width:30%;background:var(--gold);animation:ld 1.1s ease-in-out infinite}
+  @keyframes ld{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+  #pre .psub{font-size:12px;letter-spacing:.4em;color:var(--sub)}
+
+  /* ---------- hero ---------- */
+  header.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+  .hero .bgwrap{position:absolute;inset:-8% -4%;z-index:0;will-change:transform}
+  .hero .bg{position:absolute;inset:0;background:url(assets/hero-wide.jpg) center/cover no-repeat;
+    transform:scale(1.08);filter:saturate(1.05) brightness(.92)}
+  .hero .veil{position:absolute;inset:0;background:
+    linear-gradient(90deg,rgba(4,8,16,.92) 0%,rgba(4,8,16,.55) 42%,rgba(4,8,16,.2) 75%),
+    radial-gradient(120% 90% at 70% 40%,transparent,rgba(4,8,16,.7))}
+  .hero .inner{position:relative;z-index:5;padding:0 clamp(20px,6vw,90px);max-width:1100px}
+  .hero .kick{letter-spacing:.46em;font-size:clamp(11px,1.4vw,14px);color:var(--sub);margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-size:clamp(64px,15vw,200px);line-height:.94;letter-spacing:.05em;
+    background:linear-gradient(100deg,#eaf3ff 10%,#fff 35%,#f0c888 60%,#eaf3ff 90%);background-size:220% auto;
+    -webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 8s linear infinite;
+    text-shadow:0 0 60px rgba(127,216,255,.18)}
+  .hero .en{font-family:var(--serif);letter-spacing:.5em;color:#cfe0f2;font-size:clamp(12px,2.2vw,20px);margin:18px 0 0}
+  .hero .tag{margin:28px 0 0;max-width:640px;font-size:clamp(16px,2.4vw,23px);color:#e9f1fb;font-family:var(--serif)}
+  .hero .meta{margin-top:22px;color:var(--sub);font-size:13.5px;letter-spacing:.16em}
+  .cta{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:999px;
+    font-size:15px;letter-spacing:.1em;border:1px solid rgba(240,200,136,.55);color:var(--gold);overflow:hidden;transition:.4s}
+  .btn:hover{color:#160f03;border-color:var(--gold)}
+  .btn:before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:.45s cubic-bezier(.2,.7,.2,1);z-index:-1}
+  .btn:hover:before{transform:translateY(0)}
+  .btn.solid{background:var(--gold);color:#160f03;font-weight:700;border-color:var(--gold)}
+  .btn.solid:before{background:#fff}
+  .scrollhint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:5;color:var(--sub);
+    font-size:11px;letter-spacing:.4em;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scrollhint .mouse{width:22px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:14px;position:relative}
+  .scrollhint .mouse:after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;background:var(--gold);border-radius:2px;
+    transform:translateX(-50%);animation:wheel 1.6s ease-in-out infinite}
+  @keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+
+  /* ---------- generic ---------- */
+  section{position:relative;padding:clamp(70px,11vw,150px) 0}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+  .secnum{position:absolute;top:clamp(30px,6vw,70px);right:clamp(10px,4vw,60px);font-family:var(--serif);
+    font-size:clamp(90px,15vw,220px);line-height:1;color:#fff;opacity:.04;pointer-events:none;font-weight:700}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--gold);letter-spacing:.36em;font-size:12px}
+  .eyebrow:before{content:"";width:34px;height:1px;background:var(--gold)}
+  h2.sec{font-family:var(--serif);font-size:clamp(30px,5vw,58px);letter-spacing:.04em;margin:16px 0 8px}
+  .lead{color:var(--sub);font-size:clamp(15px,1.7vw,18px);max-width:720px}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+
+  /* intro counter */
+  #intro .quote{font-family:var(--serif);font-size:clamp(24px,4.6vw,52px);line-height:1.5;max-width:900px}
+  #intro .quote em{font-style:normal;color:var(--like)}
+  .count{font-family:var(--serif);font-size:clamp(80px,20vw,260px);line-height:1;font-weight:700;
+    background:linear-gradient(180deg,#fff,#ff9aa0);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* story */
+  .story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,60px);align-items:center}
+  .story p{color:#c7d5e8}
+  .story .shot{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .shot{border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+  .shot img{width:100%;display:block}
+  @media(max-width:860px){.story{grid-template-columns:1fr}}
+
+  /* characters */
+  .chars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,30px);margin-top:46px}
+  .char{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--glass);
+    backdrop-filter:blur(10px);transition:.5s;isolation:isolate}
+  .char .photo{position:relative;aspect-ratio:9/13;overflow:hidden}
+  .char .photo img{width:100%;height:100%;object-fit:cover;object-position:top;transition:1.1s cubic-bezier(.2,.7,.2,1);filter:saturate(.95)}
+  .char:hover{transform:translateY(-10px);box-shadow:0 40px 90px rgba(0,0,0,.55)}
+  .char:hover .photo img{transform:scale(1.07)}
+  .char .glow{position:absolute;inset:0;opacity:0;transition:.6s;mix-blend-mode:screen}
+  .char:hover .glow{opacity:.5}
+  .char .body{padding:20px 20px 22px}
+  .char .nm{font-family:var(--serif);font-size:24px;letter-spacing:.1em}
+  .char .rl{font-size:11.5px;letter-spacing:.24em;margin:3px 0 12px}
+  .char .qt{font-size:14.5px;color:#dbe6f5;min-height:3.4em}
+  .char .play{margin-top:14px;display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.14em;
+    color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:7px 15px;cursor:pointer;transition:.35s;background:none}
+  .char .play:hover{color:#fff;border-color:currentColor}
+  .char .play .dot{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+  .char[data-c=linyi] .rl,.char[data-c=linyi] .play{color:var(--cold)}
+  .char[data-c=yilin] .rl,.char[data-c=yilin] .play{color:var(--cyan)}
+  .char[data-c=chenxiao] .rl,.char[data-c=chenxiao] .play{color:var(--warm)}
+  .char[data-c=linyi] .glow{background:radial-gradient(120% 80% at 50% 20%,rgba(107,127,150,.6),transparent)}
+  .char[data-c=yilin] .glow{background:radial-gradient(120% 80% at 50% 20%,rgba(127,216,255,.7),transparent)}
+  .char[data-c=chenxiao] .glow{background:radial-gradient(120% 80% at 50% 20%,rgba(242,166,90,.6),transparent)}
+  @media(max-width:860px){.chars{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+
+  /* gallery */
+  .gal{columns:3;column-gap:14px;margin-top:44px}
+  .gal figure{margin:0 0 14px;break-inside:avoid;border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;cursor:zoom-in}
+  .gal img{width:100%;display:block;transition:1s}
+  .gal figure:hover img{transform:scale(1.06)}
+  .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;font-size:12px;color:#dfe9f6;
+    background:linear-gradient(transparent,rgba(4,8,16,.85));opacity:0;transform:translateY(8px);transition:.5s}
+  .gal figure:hover figcaption{opacity:1;transform:none}
+  @media(max-width:900px){.gal{columns:2}}@media(max-width:560px){.gal{columns:1}}
+
+  /* video */
+  .vidcard{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 100px rgba(0,0,0,.55);background:#000;position:relative}
+  video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+  .playov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;
+    background:radial-gradient(60% 60% at 50% 50%,rgba(4,8,16,.15),rgba(4,8,16,.55));transition:.5s}
+  .playov .ring{width:96px;height:96px;border-radius:50%;border:1px solid rgba(240,200,136,.7);display:flex;align-items:center;justify-content:center;
+    backdrop-filter:blur(4px);transition:.5s}
+  .playov .ring:after{content:"";width:0;height:0;border-left:22px solid var(--gold);border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+  .playov:hover .ring{transform:scale(1.08);background:rgba(240,200,136,.12);box-shadow:0 0 60px rgba(240,200,136,.35)}
+  .vidcard.playing .playov{opacity:0;visibility:hidden}
+
+  /* theme three selves */
+  .selves{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0 24px}
+  .self{padding:12px 24px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--sub);
+    font-size:15px;letter-spacing:.1em;cursor:pointer;transition:.4s;font-family:var(--serif)}
+  .self[aria-selected=true]{color:#08121f}
+  .self[data-s=real][aria-selected=true]{background:var(--cold);border-color:var(--cold)}
+  .self[data-s=ideal][aria-selected=true]{background:var(--cyan);border-color:var(--cyan)}
+  .self[data-s=ought][aria-selected=true]{background:var(--warm);border-color:var(--warm)}
+  .self:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+  .panel{display:none;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,50px);align-items:center;
+    border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,40px);background:var(--glass);backdrop-filter:blur(8px)}
+  .panel.on{display:grid;animation:fade .6s}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .panel h3{font-family:var(--serif);font-size:clamp(24px,3.4vw,38px);margin-bottom:10px}
+  .panel .pn{font-size:12px;letter-spacing:.3em;margin-bottom:14px}
+  .panel p{color:#c7d5e8;margin:0}
+  @media(max-width:760px){.panel{grid-template-columns:1fr}}
+
+  /* quote marquee */
+  .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;white-space:nowrap;
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .marquee .track{display:inline-flex;gap:60px;animation:mv 34s linear infinite;will-change:transform}
+  .marquee span{font-family:var(--serif);font-size:clamp(20px,3vw,38px);color:#dbe6f5}
+  .marquee span:nth-child(even){color:var(--gold)}
+  @keyframes mv{to{transform:translateX(-50%)}}
+
+  /* info */
+  .info{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,56px);align-items:start}
+  .facts{list-style:none;margin:0;padding:0}
+  .facts li{display:flex;gap:18px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .facts b{color:var(--gold);font-weight:400;min-width:104px;flex:none}
+  .facts span{color:#cfdcec}
+  .poster{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .poster img{width:100%;display:block}
+  @media(max-width:860px){.info{grid-template-columns:1fr}}
+
+  /* materials */
+  .mats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .mat{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--glass);backdrop-filter:blur(8px);transition:.45s}
+  .mat:hover{transform:translateY(-6px);border-color:rgba(240,200,136,.5);box-shadow:0 26px 60px rgba(0,0,0,.45)}
+  .mat .ic{font-size:22px;color:var(--gold);font-family:var(--serif)}
+  .mat h4{margin:10px 0 6px;font-size:17px}
+  .mat p{margin:0;font-size:13px;color:var(--sub)}
+  .mat a{display:inline-block;margin-top:12px;font-size:13px}
+  @media(max-width:860px){.mats{grid-template-columns:1fr}}
+
+  footer{padding:60px 0 50px;border-top:1px solid var(--line);text-align:center;color:var(--sub);font-size:13px}
+  footer .gold{font-family:var(--serif);font-size:17px;color:var(--gold);margin-bottom:14px}
+
+  /* lightbox */
+  #lb{position:fixed;inset:0;z-index:50;background:rgba(3,6,12,.92);display:none;align-items:center;justify-content:center;padding:5vw}
+  #lb.on{display:flex;animation:fade .35s}
+  #lb img{max-width:100%;max-height:90vh;border-radius:12px;box-shadow:0 40px 100px rgba(0,0,0,.7)}
+  #lb .x{position:absolute;top:22px;right:28px;font-size:30px;color:#fff;cursor:pointer;opacity:.7}
+  #lb .x:hover{opacity:1}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001s!important;transition-duration:.001s!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<div id="pre"><div class="pt serif">满分的我</div><div class="bar"><i></i></div><div class="psub">THE PERFECT ME</div></div>
+
+<canvas id="motes"></canvas>
+<div class="grain"></div>
+<div class="vignette"></div>
+<div id="spot"></div>
+
+<div id="prog"></div>
+<nav id="nav">
+  <div class="brand"><b>满分的我</b> · 微动漫</div>
+  <div class="links">
+    <a href="#story">故事</a><a href="#chars">角色</a><a href="#gallery">剧照</a>
+    <a href="#trailer">预告</a><a href="#theme">主题</a><a href="#info">信息</a><a href="#mats">物料</a>
+  </div>
+</nav>
+
+<div class="content">
+
+<header class="hero" id="top">
+  <div class="bgwrap" id="bgwrap"><div class="bg"></div><div class="veil"></div></div>
+  <div class="inner">
+    <div class="kick reveal">原创 2D 微动漫 · 校园心理成长</div>
+    <h1 class="reveal d1">满分的我</h1>
+    <div class="en reveal d2">THE PERFECT ME</div>
+    <p class="tag reveal d2">如果所有人都喜欢那个完美的我，<br>谁来喜欢真正的我？</p>
+    <div class="meta reveal d3">高一1班 · 朱明萱 ｜ 片长 3′30″ ｜ 自我差异理论</div>
+    <div class="cta reveal d3">
+      <a class="btn solid" href="#film">▶ 观看成片</a>
+      <a class="btn" href="#trailer">预告片</a>
+      <a class="btn" href="#story">了解故事</a>
+    </div>
+  </div>
+  <div class="scrollhint"><div class="mouse"></div>SCROLL</div>
+</header>
+
+<section id="intro">
+  <div class="secnum">01</div>
+  <div class="wrap reveal">
+    <div class="eyebrow">开场悬念</div>
+    <div class="quote" style="margin-top:18px">
+      他的照片有 <span class="count" id="cnt">0</span> 个赞，<br>
+      所有人都说他过得真好。可镜头拉近——<br>
+      <em>他一个人躲在洗手间隔间里，眼圈发红。</em>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="secnum">02</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">故事梗概</div>
+    <h2 class="sec reveal d1">把自己修得完美无缺，<br>却越来越不喜欢自己</h2>
+    <div class="story" style="margin-top:40px">
+      <div class="reveal">
+        <p>高一男生林一，是班里"人缘很好、成绩不错"的那类人。社交平台上，他的照片被无数个赞包围；可镜头拉近，他独自坐在洗手间隔间里，屏幕里是阳光灿烂的自拍，脸上却没有笑。</p>
+        <p>他把考砸的试卷塞进书包，删掉照片里疲惫的表情，对着镜头练习笑容——每一个真实的瞬间，都被剪成一张完美的照片。由"想被喜欢"的渴望凝聚而成的虚拟自我"一林"不断提醒他：<b class="cold">别让他们看出你不开心。</b></p>
+        <p>他越来越努力，却越来越不喜欢自己。直到朋友陈晓一句"<b class="warm">那你不用在我面前装没事</b>"，让他第一次发现——真实的自己，也可以被接纳。</p>
+        <p class="serif" style="color:var(--gold);font-size:19px;margin-top:20px">你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</p>
+      </div>
+      <div class="shot reveal d1"><img src="assets/still-06.jpg" alt="明暗分屏"></div>
+    </div>
+  </div>
+</section>
+
+<section id="chars">
+  <div class="secnum">03</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">三名原创角色</div>
+    <h2 class="sec reveal d1">现实的我 · 理想中的我 · 陪着我的人</h2>
+    <p class="lead reveal d2">点击卡片的按钮，可以试听他们各自的原创音色（本地 Qwen3-TTS 合成）。</p>
+    <div class="chars">
+      <article class="char reveal" data-c="linyi">
+        <div class="photo"><img src="assets/char-linyi.jpg" alt="林一"><div class="glow"></div></div>
+        <div class="body"><div class="nm serif">林一</div><div class="rl">现实自我 · 主人公</div>
+          <div class="qt">"那如果我今天不开心呢？"</div>
+          <button class="play" data-audio="assets/voice-linyi.mp3"><span class="dot"></span>试听音色</button></div>
+      </article>
+      <article class="char reveal d1" data-c="yilin">
+        <div class="photo"><img src="assets/char-yilin.jpg" alt="一林"><div class="glow"></div></div>
+        <div class="body"><div class="nm serif">一林</div><div class="rl">理想 / 应该自我 · 完美倒影</div>
+          <div class="qt">"那就不要让他们看出来。"</div>
+          <button class="play" data-audio="assets/voice-yilin.mp3"><span class="dot"></span>试听音色</button></div>
+      </article>
+      <article class="char reveal d2" data-c="chenxiao">
+        <div class="photo"><img src="assets/char-chenxiao.jpg" alt="陈晓"><div class="glow"></div></div>
+        <div class="body"><div class="nm serif">陈晓</div><div class="rl">朋友 · 陪伴者</div>
+          <div class="qt">"那你不用在我面前装没事。"</div>
+          <button class="play" data-audio="assets/voice-chenxiao.mp3"><span class="dot"></span>试听音色</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="secnum">04</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">剧照</div>
+    <h2 class="sec reveal d1">每一个真实的瞬间</h2>
+    <div class="gal">
+      <figure class="reveal"><img src="assets/still-01.jpg" alt=""><figcaption>99 个赞 / 0 个知道</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-02.jpg" alt=""><figcaption>洗手间里的林一</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-03.jpg" alt=""><figcaption>把试卷塞进书包</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-05.jpg" alt=""><figcaption>虚拟自我登场</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-06.jpg" alt=""><figcaption>明暗分屏</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-07.jpg" alt=""><figcaption>镜面包围</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-08.jpg" alt=""><figcaption>暖色光点</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-09.jpg" alt=""><figcaption>真实的笑</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-10.jpg" alt=""><figcaption>黄昏奔跑</figcaption></figure>
+      <figure class="reveal"><img src="assets/still-11.jpg" alt=""><figcaption>片尾定格</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="trailer">
+  <div class="secnum">05</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">预告片</div>
+    <h2 class="sec reveal d1">38 秒，先看一眼前面的光</h2>
+    <div class="vidcard reveal d1" id="trailercard" style="margin-top:38px">
+      <video id="trailervid" controls playsinline preload="none" poster="assets/kv.jpg">
+        <source src="assets/trailer.mp4" type="video/mp4"></video>
+      <div class="playov" data-for="trailervid"><div class="ring"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="theme">
+  <div class="secnum">06</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">主题 · 自我差异理论</div>
+    <h2 class="sec reveal d1">三面镜子里的，是同一个我</h2>
+    <p class="lead reveal d2">心理学家希金斯（E. Tory Higgins, 1987）指出：当"现实自我"与"理想 / 应该自我"落差过大时，可能带来失望、焦虑与内疚。点击看看这三种"我"。</p>
+    <div class="selves reveal d2" role="tablist">
+      <button class="self" data-s="real" aria-selected="true">现实的我</button>
+      <button class="self" data-s="ideal" aria-selected="false">理想中的我</button>
+      <button class="self" data-s="ought" aria-selected="false">我以为必须成为的我</button>
+    </div>
+    <div class="panel on" id="p-real">
+      <div><div class="pn cold">现实自我 · REAL SELF</div><h3>我现在真实的样子</h3>
+        <p>会累、会失误、会嫉妒别人，有时什么都不想做。不够明亮，却真实地活着——这正是被忽略太久的那部分自己。</p></div>
+      <div class="shot"><img src="assets/still-02.jpg" alt=""></div>
+    </div>
+    <div class="panel" id="p-ideal">
+      <div><div class="pn" style="color:var(--cyan)">理想自我 · IDEAL SELF</div><h3>我希望自己成为的样子</h3>
+        <p>一个永远优秀、永远从容、永远被喜欢的"完美倒影"。它像光一样诱人，也像影子一样跟着我们，提醒着我们"还不够好"。</p></div>
+      <div class="shot"><img src="assets/still-05.jpg" alt=""></div>
+    </div>
+    <div class="panel" id="p-ought">
+      <div><div class="pn" style="color:var(--warm)">应该自我 · OUGHT SELF</div><h3>我觉得自己必须成为的样子</h3>
+        <p>"你应该更优秀。""你不能落后。""别让大家失望。"——当"必须"取代了"想要"，努力就不再是成长，而成了审判自己的标准。</p></div>
+      <div class="shot"><img src="assets/still-07.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track" id="mq">
+    <span>"他们都说，我过得真好。"</span><span>那就不要让他们看出来。</span>
+    <span>"可我越来越努力，为什么越来越不喜欢自己？"</span><span>那你不用在我面前装没事。</span>
+    <span>"那如果我们不完美了呢？"</span><span>那我们就做一个不完美的人。</span>
+    <span>"不用。记得就好了。"</span><span>原来，我们不必一直满分。</span>
+  </div>
+</div>
+
+<section id="film">
+  <div class="wrap">
+    <div class="eyebrow reveal">完整作品</div>
+    <h2 class="sec reveal d1">观看《满分的我》· 配音版 3′30″</h2>
+    <div class="vidcard reveal d1" id="filmcard" style="margin-top:38px">
+      <video id="filmvid" controls playsinline preload="none" poster="assets/poster.jpg">
+        <source src="assets/film.mp4" type="video/mp4"></video>
+      <div class="playov" data-for="filmvid"><div class="ring"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="secnum">07</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">作品信息</div>
+    <h2 class="sec reveal d1">关于这部作品</h2>
+    <div class="info" style="margin-top:40px">
+      <ul class="facts reveal">
+        <li><b>作品名称</b><span>满分的我（The Perfect Me）</span></li>
+        <li><b>参赛信息</b><span>高一1班 · 朱明萱 · 满分的我</span></li>
+        <li><b>类别题材</b><span>微动漫 · 原创 2D 动画 ｜ 校园心理 · 成长</span></li>
+        <li><b>核心理论</b><span>自我差异理论（E. Tory Higgins, 1987）</span></li>
+        <li><b>主要角色</b><span>林一 · 一林 · 陈晓</span></li>
+        <li><b>画面风格</b><span>轻薄半赛璐 / 淡彩赛璐（Soft Cel + Paper Texture）</span></li>
+        <li><b>片长 / 大小</b><span>约 3′30″（≤5min）｜ 约 66MB（≤200MB）</span></li>
+        <li><b>制作工具</b><span>Qwen-Image-2.1 · ACE-Step · Qwen3-TTS · 自研音效 · Krita · OpenToonz · Kdenlive · FFmpeg</span></li>
+        <li><b>原创声明</b><span>角色 / 场景 / 剧情 / 台词 / 分镜 / 提示词均原创；图像、配乐、配音、音效由本地开源模型与脚本生成</span></li>
+      </ul>
+      <div class="poster reveal d1"><img src="assets/poster.jpg" alt="主海报"></div>
+    </div>
+  </div>
+</section>
+
+<section id="mats">
+  <div class="secnum">08</div>
+  <div class="wrap">
+    <div class="eyebrow reveal">宣传物料</div>
+    <h2 class="sec reveal d1">带走这套物料</h2>
+    <div class="mats">
+      <div class="mat reveal"><div class="ic">01</div><h4>成片 · 字幕版 / 配音版</h4><p>MP4 / H.264 / 1080p，符合投稿规范。</p><a href="#film">观看配音版 ↑</a></div>
+      <div class="mat reveal d1"><div class="ic">02</div><h4>预告片</h4><p>约 38 秒，1080p，适合短视频平台。</p><a href="#trailer">观看预告 ↑</a></div>
+      <div class="mat reveal d2"><div class="ic">03</div><h4>主视觉 · 海报</h4><p>竖版主海报 / 横版 KV / 角色卡 / 九宫格 / 展架。</p><a href="assets/poster.jpg" download>下载主海报 ↓</a></div>
+      <div class="mat reveal"><div class="ic">04</div><h4>宣传文案包</h4><p>多平台、多长度现成文案（朋友圈 / 公众号 / 短视频）。</p><a href="../08-宣传物料/02-文案/《满分的我》宣传文案包.md" target="_blank">查看文案 ↓</a></div>
+      <div class="mat reveal d1"><div class="ic">05</div><h4>投稿清单与合规</h4><p>设计要求核对、文件清单、原创性声明。</p><a href="../08-宣传物料/02-文案/投稿清单与合规核对.md" target="_blank">查看清单 ↓</a></div>
+      <div class="mat reveal d2"><div class="ic">06</div><h4>项目文档</h4><p>剧本 / 分镜 / 配音 / 工程 / 全部制作文档。</p><a href="../00-文档总览.html" target="_blank">打开文档总览 ↓</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="gold serif">你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</div>
+    <p>《满分的我》 ｜ 高一1班 · 朱明萱 ｜ 原创 2D 微动漫 ｜ THE PERFECT ME</p>
+    <p>角色、场景、剧情、台词、分镜、提示词均为原创；图像 / 配乐 / 配音 / 音效由本地开源模型与脚本生成。</p>
+  </div>
+</footer>
+
+</div><!-- /content -->
+
+<div id="lb"><span class="x">×</span><img alt=""></div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* preloader */
+  window.addEventListener("load", function(){ setTimeout(function(){ document.getElementById("pre").classList.add("done"); }, 500); });
+  setTimeout(function(){ document.getElementById("pre").classList.add("done"); }, 2600);
+
+  /* progress + nav */
+  var nav = document.getElementById("nav"), prog = document.getElementById("prog");
+  function onScroll(){
+    var h = document.documentElement, sc = h.scrollTop || document.body.scrollTop;
+    var max = (h.scrollHeight - h.clientHeight) || 1;
+    prog.style.width = (sc / max * 100) + "%";
+    nav.classList.toggle("solid", sc > 40);
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* reveal */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, {threshold:.14, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* hero parallax + spotlight */
+  var bg = document.getElementById("bgwrap"), spot = document.getElementById("spot");
+  var hx=0, hy=0, tx=0, ty=0;
+  document.querySelector(".hero").addEventListener("mousemove", function(e){
+    var r = this.getBoundingClientRect();
+    tx = (e.clientX - r.left - r.width/2) / r.width;
+    ty = (e.clientY - r.top - r.height/2) / r.height;
+    spot.style.opacity = 1;
+    spot.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)";
+  });
+  document.querySelector(".hero").addEventListener("mouseleave", function(){ spot.style.opacity = 0; tx=0; ty=0; });
+  function raf(){
+    hx += (tx - hx) * .06; hy += (ty - hy) * .06;
+    var sc = window.scrollY || 0;
+    if(bg) bg.style.transform = "translate3d(" + (hx*-26) + "px," + (hy*-18 + sc*.22) + "px,0)";
+    requestAnimationFrame(raf);
+  }
+  if(!reduce) raf();
+  spot.style.position="fixed"; spot.style.pointerEvents="none";
+
+  /* counter */
+  var cnt = document.getElementById("cnt"), done=false;
+  var cio = new IntersectionObserver(function(es){ es.forEach(function(e){
+    if(e.isIntersecting && !done){ done=true; var n=0; var t=setInterval(function(){ n+=3; if(n>=99){n=99; clearInterval(t);} cnt.textContent=n; }, 26); }
+  });}, {threshold:.6});
+  cio.observe(cnt);
+
+  /* gallery lightbox */
+  var lb = document.getElementById("lb"), lbi = lb.querySelector("img");
+  document.querySelectorAll(".gal figure").forEach(function(f){
+    f.addEventListener("click", function(){ var im = f.querySelector("img"); lbi.src = im.src; lb.classList.add("on"); });
+  });
+  lb.addEventListener("click", function(){ lb.classList.remove("on"); });
+
+  /* character audio */
+  var audio = new Audio(); var cur = null;
+  document.querySelectorAll(".char .play").forEach(function(b){
+    b.addEventListener("click", function(){
+      var src = b.getAttribute("data-audio");
+      if(cur === b){ audio.pause(); cur.classList.remove("playing"); cur=null; return; }
+      if(cur) cur.classList.remove("playing");
+      audio.src = src; audio.play(); cur = b; b.classList.add("playing");
+    });
+  });
+  audio.addEventListener("ended", function(){ if(cur) cur.classList.remove("playing"); cur=null; });
+
+  /* three selves */
+  document.querySelectorAll(".self").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".self").forEach(function(x){ x.setAttribute("aria-selected","false"); });
+      btn.setAttribute("aria-selected","true");
+      document.querySelectorAll(".panel").forEach(function(p){ p.classList.remove("on"); });
+      document.getElementById("p-" + btn.getAttribute("data-s")).classList.add("on");
+    });
+  });
+
+  /* video overlays */
+  document.querySelectorAll(".playov").forEach(function(ov){
+    ov.addEventListener("click", function(){
+      var v = document.getElementById(ov.getAttribute("data-for"));
+      v.closest(".vidcard").classList.add("playing");
+      v.play();
+    });
+  });
+  document.querySelectorAll("video").forEach(function(v){
+    v.addEventListener("pause", function(){ if(v.currentTime>0) v.closest(".vidcard").classList.add("playing"); });
+  });
+
+  /* motes canvas */
+  var cv = document.getElementById("motes"), x = cv.getContext("2d"), motes = [], W, H, DPR;
+  function size(){ DPR = Math.min(2, window.devicePixelRatio||1); W = cv.width = innerWidth*DPR; H = cv.height = innerHeight*DPR;
+    cv.style.width = innerWidth+"px"; cv.style.height = innerHeight+"px"; }
+  size(); window.addEventListener("resize", size);
+  var N = reduce ? 0 : (innerWidth < 700 ? 34 : 66);
+  for(var i=0;i<N;i++){ motes.push({ x:Math.random()*W, y:Math.random()*H, r:(Math.random()*2+0.6)*DPR,
+    vx:(Math.random()-0.5)*0.14*DPR, vy:-(Math.random()*0.25+0.05)*DPR, a:Math.random()*0.5+0.15,
+    c: Math.random()<0.7 ? "190,215,250" : (Math.random()<0.5 ? "240,200,136" : "127,216,255") }); }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<motes.length;i++){ var m = motes[i];
+      m.x += m.vx; m.y += m.vy;
+      if(m.y < -10){ m.y = H+10; m.x = Math.random()*W; }
+      if(m.x < -10) m.x = W+10; if(m.x > W+10) m.x = -10;
+      var g = x.createRadialGradient(m.x,m.y,0,m.x,m.y,m.r*5);
+      g.addColorStop(0,"rgba("+m.c+","+m.a+")"); g.addColorStop(1,"rgba("+m.c+",0)");
+      x.fillStyle = g; x.beginPath(); x.arc(m.x,m.y,m.r*5,0,Math.PI*2); x.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  if(!reduce) draw();
+
+  /* marquee duplicate for seamless loop */
+  var mq = document.getElementById("mq"); if(mq) mq.innerHTML += mq.innerHTML;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《满分的我》项目文档总览</title>
+<style>
+  :root{
+    --bg:#0b1220; --ink:#eef3fa; --sub:#9fb2ca; --gold:#f0c888; --line:rgba(255,255,255,.10);
+    --card:rgba(255,255,255,.04); --cold:#7fd8ff; --warm:#f2a65a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:linear-gradient(180deg,#0a1120,#0b1220 40%,#0a0f1c);color:var(--ink);line-height:1.8;
+    font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"Noto Serif CJK SC","Songti SC",Georgia,serif}
+  a{color:var(--gold);text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  header{position:relative;text-align:center;padding:70px 0 40px;border-bottom:1px solid var(--line)}
+  header .kick{letter-spacing:.4em;font-size:13px;color:var(--sub)}
+  header h1{font-size:clamp(40px,7vw,84px);margin:14px 0 0;letter-spacing:.05em}
+  header .en{letter-spacing:.4em;color:#cfe0f2;font-size:14px;margin-top:10px}
+  header .badge{display:inline-block;margin-top:20px;font-size:13px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:4px 16px}
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 4px;letter-spacing:.05em}
+  h2 .en{display:block;font-size:12px;color:var(--sub);letter-spacing:.3em;margin-top:6px;font-weight:400}
+  .lead{color:var(--sub)}
+  .fig{border-radius:14px;overflow:hidden;border:1px solid var(--line);margin:22px 0}
+  .fig img{width:100%;display:block}
+  .fig figcaption{font-size:13px;color:var(--sub);padding:10px 14px;background:var(--card)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--gold);font-weight:400;white-space:nowrap}
+  code{background:rgba(255,255,255,.07);padding:1px 7px;border-radius:6px;font-size:13px;color:#dfe9f6}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .toc a{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:5px 14px;color:var(--sub)}
+  .steps{list-style:none;padding:0;margin:18px 0}
+  .steps li{padding:10px 0 10px 34px;position:relative;border-bottom:1px dashed var(--line)}
+  .steps li:before{content:attr(data-n);position:absolute;left:0;top:11px;width:22px;height:22px;border-radius:50%;
+    border:1px solid var(--gold);color:var(--gold);font-size:12px;display:flex;align-items:center;justify-content:center}
+  footer{padding:44px 0;color:var(--sub);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  @page{ size:A4; margin:14mm 12mm; }
+  @media print{
+    body{background:#fff;color:#111;font-size:12.5px}
+    header h1,header .en{color:#111} a{color:#8a6a2a}
+    .fig,code,th,td{border-color:#ccc} .fig figcaption,.badge{background:#f5f5f5;color:#333}
+    h2{color:#111} h2 .en{color:#777} th{color:#8a6a2a} .toc a{color:#333}
+    section{break-inside:avoid}
+    .fig{break-inside:avoid} header{padding:24px 0}
+    a[href$=".md"]{color:#666}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kick">原创 2D 微动漫 · 制作文档</div>
+    <h1 class="serif">满分的我</h1>
+    <div class="en serif">THE&nbsp;PERFECT&nbsp;ME</div>
+    <div class="badge">文档总览 · DOC-00 · v1.0 · 2026-10-10</div>
+    <div class="toc" style="justify-content:center">
+      <a href="#ov">项目速览</a><a href="#map">文档地图</a><a href="#paths">阅读路径</a>
+      <a href="#pipe">制作流程</a><a href="#figs">阶段配图</a><a href="#ver">版本记录</a><a href="#ext">原始文档</a>
+    </div>
+  </div>
+</header>
+
+<section id="ov">
+  <div class="wrap">
+    <h2 class="serif">项目速览<span class="en">OVERVIEW</span></h2>
+    <table>
+      <tr><th>作品名称</th><td>满分的我（The Perfect Me）</td></tr>
+      <tr><th>副标题</th><td>如果所有人都喜欢那个完美的我，谁来喜欢真正的我？</td></tr>
+      <tr><th>参赛信息</th><td>高一1班 · 朱明萱 · 满分的我</td></tr>
+      <tr><th>作品类别</th><td>微动漫 · 原创 2D 动画 ｜ 校园心理 · 成长</td></tr>
+      <tr><th>核心理论</th><td>自我差异理论（Self-Discrepancy Theory, E. Tory Higgins, 1987）</td></tr>
+      <tr><th>主要角色</th><td>林一（现实自我）· 一林（理想/应该自我）· 陈晓（朋友）</td></tr>
+      <tr><th>画面风格</th><td>轻薄半赛璐 / 淡彩赛璐（Soft Cel + Paper Texture）</td></tr>
+      <tr><th>成片 / 时长 / 大小</th><td>MP4 · H.264/AAC ｜ 约 3′30″（≤5min）｜ 约 65MB（≤200MB）</td></tr>
+      <tr><th>一句话</th><td>你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</td></tr>
+    </table>
+    <figure class="fig"><img src="09-文档配图/00-总览-封面.png" alt="项目总览封面"><figcaption>DOC-00 · 项目总览——从剧本到成片的完整创作</figcaption></figure>
+  </div>
+</section>
+
+<section id="map">
+  <div class="wrap">
+    <h2 class="serif">文档地图<span class="en">DOCUMENT MAP</span></h2>
+    <table>
+      <tr><th>编号</th><th>文档</th><th>作用</th></tr>
+      <tr><td>DOC-00</td><td>00-文档总览</td><td>总入口、导航、规范</td></tr>
+      <tr><td>DOC-A1</td><td>01-脚本/满分的我-完整剧本.md</td><td>五幕完整剧本、叙事设计、理论</td></tr>
+      <tr><td>DOC-A2</td><td>01-脚本/满分的我-分镜表.md</td><td>镜头级分镜</td></tr>
+      <tr><td>DOC-A3</td><td>01-脚本/满分的我-逐镜动画分镜表.md</td><td>逐镜运动/微动/光效/字幕动效</td></tr>
+      <tr><td>DOC-B1</td><td>03-角色设定/人物设定.md</td><td>角色外形/性格/色彩规范</td></tr>
+      <tr><td>DOC-B2</td><td>02-提示词/满分的我-五轮提示词.md</td><td>6 轮原创提示词</td></tr>
+      <tr><td>DOC-C1</td><td>05-音频/音频与音乐说明.md</td><td>ACE-Step 配乐 + 音效清单</td></tr>
+      <tr><td>DOC-C2</td><td>05-音频/配音方案-Qwen3-TTS.md</td><td>音色设计、台词、多轨混音、成片</td></tr>
+      <tr><td>DOC-D1</td><td>06-工程源文件/制作流程与工程说明.md</td><td>工具链、复现步骤、Kdenlive/OpenToonz/Krita</td></tr>
+      <tr><td>DOC-E1</td><td>08-宣传物料/02-文案/《满分的我》宣传文案包.md</td><td>多平台、多长度文案</td></tr>
+      <tr><td>DOC-E2</td><td>08-宣传物料/02-文案/投稿清单与合规核对.md</td><td>设计要求核对、文件清单、送审检查</td></tr>
+      <tr><td>DOC-E3</td><td>08-宣传物料/README.md</td><td>海报/主视觉/预告片/落地页说明</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="paths">
+  <div class="wrap">
+    <h2 class="serif">推荐阅读路径<span class="en">READING PATHS</span></h2>
+    <div class="grid2">
+      <div>
+        <p class="lead"><b>评审 / 观众（约 5 分钟）</b><br>README → 主海报 → 预告片 → 成片</p>
+        <p class="lead"><b>复现 / 二次开发</b><br>DOC-D1 制作流程 → DOC-B2 提示词 → DOC-C1/C2 音频 → build/ 脚本</p>
+      </div>
+      <div>
+        <p class="lead"><b>投稿 / 宣传</b><br>DOC-E2 投稿合规 → DOC-E1 宣传文案 → 08-宣传物料/</p>
+        <p class="lead"><b>创作溯源（全流程）</b><br>A1 → A2 → A3 → B1 → B2 → C1 → C2 → D1 → E*</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pipe">
+  <div class="wrap">
+    <h2 class="serif">制作流程<span class="en">PIPELINE</span></h2>
+    <ol class="steps">
+      <li data-n="1"><b>策划</b>：剧本 → 分镜 → 逐镜动画分镜（DOC-A1/A2/A3）</li>
+      <li data-n="2"><b>视觉</b>：角色设定 + 6 轮提示词 → Qwen-Image-2.1 → 04-分镜图/</li>
+      <li data-n="3"><b>动画</b>：分镜图 → 呼吸式镜头运动（ffmpeg）/ OpenToonz → build/clips/</li>
+      <li data-n="4"><b>音频</b>：ACE-Step 配乐 + Qwen3-TTS 配音 + 自研音效 → 05-音频/{BGM,配音,多轨}</li>
+      <li data-n="5"><b>合成</b>：build/build.py → 字幕版成片；build/mix_dub.py → 配音版成片</li>
+      <li data-n="6"><b>工程</b>：make_mlt.py / make_mlt_dub.py → 06-工程源文件/*.mlt</li>
+      <li data-n="7"><b>宣传</b>：主视觉 + 文案 + 预告片 → 08-宣传物料/</li>
+    </ol>
+    <figure class="fig"><img src="09-文档配图/D1-制作工程.png" alt="制作工程"><figcaption>DOC-D1 · 制作工程——从构思到成片</figcaption></figure>
+  </div>
+</section>
+
+<section id="figs">
+  <div class="wrap">
+    <h2 class="serif">阶段配图<span class="en">ILLUSTRATIONS</span></h2>
+    <p class="lead">以下配图均由本地 Qwen-Image-2.1 以<b>统一风格</b>生成（轻薄半赛璐 / 淡彩赛璐 + 纸张颗粒），与本片同源同风。</p>
+    <div class="grid2">
+      <figure class="fig"><img src="09-文档配图/A-策划创作.png" alt="策划创作"><figcaption>DOC-A · 策划创作——剧本 · 分镜 · 逐镜动画</figcaption></figure>
+      <figure class="fig"><img src="09-文档配图/B1-角色设定.png" alt="角色设定"><figcaption>DOC-B1 · 角色设定——三名原创角色</figcaption></figure>
+      <figure class="fig"><img src="09-文档配图/B2-场景与提示词.png" alt="场景与提示词"><figcaption>DOC-B2 · 场景 · 提示词——四个主要场景</figcaption></figure>
+      <figure class="fig"><img src="09-文档配图/C1-原创配乐.png" alt="原创配乐"><figcaption>DOC-C1 · 原创配乐——焦虑 → 冲突 → 释然</figcaption></figure>
+      <figure class="fig"><img src="09-文档配图/C2-配音.png" alt="配音"><figcaption>DOC-C2 · 配音——三种原创音色</figcaption></figure>
+      <figure class="fig"><img src="09-文档配图/E-宣传物料.png" alt="宣传物料"><figcaption>DOC-E · 宣传物料——作品与展示</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="ver">
+  <div class="wrap">
+    <h2 class="serif">版本与规范<span class="en">VERSION &amp; CONVENTIONS</span></h2>
+    <table>
+      <tr><th>日期</th><th>变更</th></tr>
+      <tr><td>2026-10-10</td><td>建立《文档总览》；统一各文档元信息头；补全配音（三音色+旁白、女声陈晓）、A1–A6 多轨混音与配音版成片、A5 程序化音效；补全 08-宣传物料；新增 09-文档配图（统一风格）与本 HTML 导出</td></tr>
+    </table>
+    <p class="lead" style="margin-top:16px">
+      <b>编号规范</b>：<code>DOC-&lt;组&gt;&lt;序&gt;</code>（A 策划 / B 视觉 / C 音频 / D 工程 / E 宣传）；新增文档请登记到「文档地图」。<br>
+      <b>命名规范</b>：成片严格遵循「班级-姓名-作品名称」，即 <code>高一1班-朱明萱-满分的我.mp4</code>。
+    </p>
+    <figure class="fig"><img src="09-文档配图/00-总览-封面.png" alt="封面"><figcaption>《满分的我》· 制作文档封面</figcaption></figure>
+  </div>
+</section>
+
+<section id="ext">
+  <div class="wrap">
+    <h2 class="serif">原始文档<span class="en">FILES</span></h2>
+    <p class="lead">本页为分发用 HTML 导出；各文档的完整内容见仓库内 Markdown 原文：</p>
+    <ul>
+      <li><a href="00-文档总览.md">00-文档总览.md</a></li>
+      <li><a href="01-脚本/满分的我-完整剧本.md">01-脚本/满分的我-完整剧本.md</a> · <a href="01-脚本/满分的我-分镜表.md">分镜表.md</a> · <a href="01-脚本/满分的我-逐镜动画分镜表.md">逐镜动画分镜表.md</a></li>
+      <li><a href="03-角色设定/人物设定.md">03-角色设定/人物设定.md</a> · <a href="02-提示词/满分的我-五轮提示词.md">02-提示词/满分的我-五轮提示词.md</a></li>
+      <li><a href="05-音频/音频与音乐说明.md">05-音频/音频与音乐说明.md</a> · <a href="05-音频/配音方案-Qwen3-TTS.md">配音方案-Qwen3-TTS.md</a></li>
+      <li><a href="06-工程源文件/制作流程与工程说明.md">06-工程源文件/制作流程与工程说明.md</a></li>
+      <li><a href="08-宣传物料/README.md">08-宣传物料/README.md</a> · <a href="08-宣传物料/02-文案/《满分的我》宣传文案包.md">宣传文案包.md</a> · <a href="08-宣传物料/02-文案/投稿清单与合规核对.md">投稿清单与合规核对.md</a></li>
+    </ul>
+    <p class="lead">提示：浏览器「打印 → 保存为 PDF」即可导出本页为 PDF。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="serif" style="font-size:17px;color:var(--gold)">你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</p>
+    <p>《满分的我》 · 高一1班 · 朱明萱 · 原创 2D 微动漫</p>
+    <p>角色、场景、剧情、台词、分镜、提示词均为原创；图像 / 配乐 / 配音 / 音效由本地开源模型与脚本生成。</p>
+  </div>
+</footer>
+
+</body>
+</html>

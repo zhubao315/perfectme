@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" version="7.22.0" title="满分的我(配音版)" producer="main_bin">
+  <profile description="HD 1080p 25 fps" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="25" frame_rate_den="1" colorspace="709"/>
+['  <producer id="v0">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid00.mp4</property>\n    <property name="length">63</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v1">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr00.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v2">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid01.mp4</property>\n    <property name="length">19</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v3">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr01.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v4">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid02.mp4</property>\n    <property name="length">74</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v5">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr02.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v6">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid03.mp4</property>\n    <property name="length">134</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v7">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr03.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v8">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid04.mp4</property>\n    <property name="length">1</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v9">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr04.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v10">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid05.mp4</property>\n    <property name="length">59</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v11">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr05.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v12">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid06.mp4</property>\n    <property name="length">44</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v13">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr06.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v14">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid07.mp4</property>\n    <property name="length">74</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v15">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr07.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v16">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid08.mp4</property>\n    <property name="length">1</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v17">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr08.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v18">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid09.mp4</property>\n    <property name="length">94</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v19">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr09.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v20">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid10.mp4</property>\n    <property name="length">114</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v21">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr10.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v22">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid11.mp4</property>\n    <property name="length">149</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v23">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr11.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v24">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid12.mp4</property>\n    <property name="length">149</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v25">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr12.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v26">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid13.mp4</property>\n    <property name="length">174</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v27">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr13.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v28">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid14.mp4</property>\n    <property name="length">124</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v29">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr14.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v30">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid15.mp4</property>\n    <property name="length">74</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v31">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr15.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v32">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid16.mp4</property>\n    <property name="length">64</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v33">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr16.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v34">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid17.mp4</property>\n    <property name="length">162</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v35">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr17.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v36">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid18.mp4</property>\n    <property name="length">199</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v37">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr18.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v38">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid19.mp4</property>\n    <property name="length">137</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v39">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr19.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v40">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid20.mp4</property>\n    <property name="length">137</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v41">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr20.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v42">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid21.mp4</property>\n    <property name="length">137</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v43">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr21.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v44">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid22.mp4</property>\n    <property name="length">74</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v45">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr22.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v46">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid23.mp4</property>\n    <property name="length">174</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v47">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr23.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v48">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid24.mp4</property>\n    <property name="length">99</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v49">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr24.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v50">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid25.mp4</property>\n    <property name="length">124</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v51">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr25.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v52">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid26.mp4</property>\n    <property name="length">99</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v53">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr26.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v54">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid27.mp4</property>\n    <property name="length">39</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v55">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr27.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v56">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid28.mp4</property>\n    <property name="length">19</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v57">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr28.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v58">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid29.mp4</property>\n    <property name="length">99</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v59">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr29.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v60">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid30.mp4</property>\n    <property name="length">39</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v61">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr30.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v62">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid31.mp4</property>\n    <property name="length">74</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v63">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr31.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v64">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid32.mp4</property>\n    <property name="length">199</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v65">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/tr32.mp4</property>\n    <property name="length">13</property>\n    <property name="set.test_image">1</property>\n  </producer>\n', '  <producer id="v66">\n    <property name="mlt_service">avformat</property>\n    <property name="resource">/oc/mov/build/segments/mid33.mp4</property>\n    <property name="length">62</property>\n    <property name="set.test_image">1</property>\n  </producer>\n']  <producer id="a_linyi">
+    <property name="mlt_service">avformat</property>
+    <property name="resource">/oc/mov/05-音频/多轨/A1_林一.wav</property>
+    <property name="length">3793</property>
+  </producer>
+  <producer id="a_yilin">
+    <property name="mlt_service">avformat</property>
+    <property name="resource">/oc/mov/05-音频/多轨/A2_一林.wav</property>
+    <property name="length">3793</property>
+  </producer>
+  <producer id="a_chenxiao">
+    <property name="mlt_service">avformat</property>
+    <property name="resource">/oc/mov/05-音频/多轨/A3_陈晓.wav</property>
+    <property name="length">3793</property>
+  </producer>
+  <producer id="a_bgm">
+    <property name="mlt_service">avformat</property>
+    <property name="resource">/oc/mov/05-音频/多轨/A4_配乐.wav</property>
+    <property name="length">3724</property>
+  </producer>
+  <producer id="a_sfx">
+    <property name="mlt_service">avformat</property>
+    <property name="resource">/oc/mov/05-音频/多轨/A5_音效.wav</property>
+    <property name="length">3793</property>
+  </producer>
+  <producer id="a_narr">
+    <property name="mlt_service">avformat</property>
+    <property name="resource">/oc/mov/05-音频/多轨/A6_旁白.wav</property>
+    <property name="length">3793</property>
+  </producer>
+  <playlist id="videoplay">
+    <entry producer="v0" in="0" out="62"/>
+    <entry producer="v1" in="0" out="12"/>
+    <entry producer="v2" in="0" out="18"/>
+    <entry producer="v3" in="0" out="12"/>
+    <entry producer="v4" in="0" out="73"/>
+    <entry producer="v5" in="0" out="12"/>
+    <entry producer="v6" in="0" out="133"/>
+    <entry producer="v7" in="0" out="12"/>
+    <entry producer="v8" in="0" out="0"/>
+    <entry producer="v9" in="0" out="12"/>
+    <entry producer="v10" in="0" out="58"/>
+    <entry producer="v11" in="0" out="12"/>
+    <entry producer="v12" in="0" out="43"/>
+    <entry producer="v13" in="0" out="12"/>
+    <entry producer="v14" in="0" out="73"/>
+    <entry producer="v15" in="0" out="12"/>
+    <entry producer="v16" in="0" out="0"/>
+    <entry producer="v17" in="0" out="12"/>
+    <entry producer="v18" in="0" out="93"/>
+    <entry producer="v19" in="0" out="12"/>
+    <entry producer="v20" in="0" out="113"/>
+    <entry producer="v21" in="0" out="12"/>
+    <entry producer="v22" in="0" out="148"/>
+    <entry producer="v23" in="0" out="12"/>
+    <entry producer="v24" in="0" out="148"/>
+    <entry producer="v25" in="0" out="12"/>
+    <entry producer="v26" in="0" out="173"/>
+    <entry producer="v27" in="0" out="12"/>
+    <entry producer="v28" in="0" out="123"/>
+    <entry producer="v29" in="0" out="12"/>
+    <entry producer="v30" in="0" out="73"/>
+    <entry producer="v31" in="0" out="12"/>
+    <entry producer="v32" in="0" out="63"/>
+    <entry producer="v33" in="0" out="12"/>
+    <entry producer="v34" in="0" out="161"/>
+    <entry producer="v35" in="0" out="12"/>
+    <entry producer="v36" in="0" out="198"/>
+    <entry producer="v37" in="0" out="12"/>
+    <entry producer="v38" in="0" out="136"/>
+    <entry producer="v39" in="0" out="12"/>
+    <entry producer="v40" in="0" out="136"/>
+    <entry producer="v41" in="0" out="12"/>
+    <entry producer="v42" in="0" out="136"/>
+    <entry producer="v43" in="0" out="12"/>
+    <entry producer="v44" in="0" out="73"/>
+    <entry producer="v45" in="0" out="12"/>
+    <entry producer="v46" in="0" out="173"/>
+    <entry producer="v47" in="0" out="12"/>
+    <entry producer="v48" in="0" out="98"/>
+    <entry producer="v49" in="0" out="12"/>
+    <entry producer="v50" in="0" out="123"/>
+    <entry producer="v51" in="0" out="12"/>
+    <entry producer="v52" in="0" out="98"/>
+    <entry producer="v53" in="0" out="12"/>
+    <entry producer="v54" in="0" out="38"/>
+    <entry producer="v55" in="0" out="12"/>
+    <entry producer="v56" in="0" out="18"/>
+    <entry producer="v57" in="0" out="12"/>
+    <entry producer="v58" in="0" out="98"/>
+    <entry producer="v59" in="0" out="12"/>
+    <entry producer="v60" in="0" out="38"/>
+    <entry producer="v61" in="0" out="12"/>
+    <entry producer="v62" in="0" out="73"/>
+    <entry producer="v63" in="0" out="12"/>
+    <entry producer="v64" in="0" out="198"/>
+    <entry producer="v65" in="0" out="12"/>
+    <entry producer="v66" in="0" out="61"/>
+  </playlist>
+  <playlist id="A1">
+    <entry producer="a_linyi" in="0" out="3792"/>
+  </playlist>
+  <playlist id="A2">
+    <entry producer="a_yilin" in="0" out="3792"/>
+  </playlist>
+  <playlist id="A3">
+    <entry producer="a_chenxiao" in="0" out="3792"/>
+  </playlist>
+  <playlist id="A4">
+    <entry producer="a_bgm" in="0" out="3723"/>
+  </playlist>
+  <playlist id="A5">
+    <entry producer="a_sfx" in="0" out="3792"/>
+  </playlist>
+  <playlist id="A6">
+    <entry producer="a_narr" in="0" out="3792"/>
+  </playlist>
+  <tractor id="maintractor" title="满分的我(配音版)" global_feed="1">
+    <property name="kdenlive:projectTractor">1</property>
+    <track producer="videoplay"/>
+    <track producer="A1"/>
+    <track producer="A2"/>
+    <track producer="A3"/>
+    <track producer="A4"/>
+    <track producer="A5"/>
+    <track producer="A6"/>
+    <transition id="mix1">
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+    </transition>
+    <transition id="mix2">
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+    </transition>
+    <transition id="mix3">
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+    </transition>
+    <transition id="mix4">
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+    </transition>
+    <transition id="mix5">
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">5</property>
+    </transition>
+    <transition id="mix6">
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+      <property name="a_track">0</property>
+      <property name="b_track">6</property>
+    </transition>
+    <filter id="subtitle0">
+      <property name="mlt_service">avfilter.subtitles</property>
+      <property name="av.filename">/oc/mov/build/subs.ass</property>
+      <property name="disable">0</property>
+    </filter>
+  </tractor>
+  <tractor id="main_bin" title="项目素材箱">
+    <property name="kdenlive:docproperties.version">1.04</property>
+    <track producer="maintractor"/>
+  </tractor>
+</mlt>

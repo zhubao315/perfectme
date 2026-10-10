@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>满分的我 · 原创 2D 微动漫 ｜ 高一1班 · 朱明萱</title>
+<meta name="description" content="如果所有人都喜欢那个完美的我，谁来喜欢真正的我？——原创校园心理微动漫《满分的我》">
+<style>
+  :root{
+    --bg:#0b1220; --bg2:#0f1a2e; --ink:#eef3fa; --sub:#9fb2ca; --gold:#f0c888;
+    --cold:#7fd8ff; --warm:#f2a65a; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:linear-gradient(180deg,#0a1120,#0b1220 40%,#0a0f1c);color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased}
+  .serif{font-family:"Noto Serif CJK SC","Songti SC","SimSun",Georgia,serif}
+  a{color:var(--gold);text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  section{padding:74px 0;border-top:1px solid var(--line)}
+  h2{font-size:30px;margin:0 0 6px;letter-spacing:.06em}
+  h2 .en{display:block;font-size:13px;color:var(--sub);letter-spacing:.32em;margin-top:8px;font-weight:400}
+  .lead{color:var(--sub);font-size:16px}
+  .gold{color:var(--gold)} .cold{color:var(--cold)} .warm{color:var(--warm)}
+
+  /* Hero */
+  header{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  header .bg{position:absolute;inset:0;background:url(../01-主视觉/主视觉-横版.png) center/cover no-repeat;filter:saturate(1.02)}
+  header .veil{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 30%,rgba(8,14,26,.35),rgba(8,14,26,.86))}
+  header .inner{position:relative;padding:0 22px}
+  header .kick{letter-spacing:.5em;font-size:13px;color:var(--sub);margin-bottom:22px}
+  header h1{font-size:clamp(56px,12vw,132px);margin:0;letter-spacing:.06em;text-shadow:0 6px 40px rgba(0,0,0,.55)}
+  header .en{letter-spacing:.42em;color:#cfe0f2;font-size:clamp(12px,2.4vw,18px);margin:16px 0 0}
+  header .tag{margin:26px auto 0;max-width:820px;font-size:clamp(17px,2.6vw,24px);color:#eaf1fb}
+  header .meta{margin-top:30px;color:var(--sub);font-size:14px;letter-spacing:.14em}
+  .cta{display:inline-flex;gap:14px;margin-top:34px;flex-wrap:wrap;justify-content:center}
+  .btn{padding:12px 26px;border:1px solid var(--gold);border-radius:999px;color:var(--gold);font-size:15px;letter-spacing:.1em}
+  .btn.solid{background:var(--gold);color:#1a1206;border-color:var(--gold);font-weight:700}
+  .rule{width:64px;height:3px;background:var(--gold);margin:22px auto;border-radius:2px}
+
+  /* generic grids */
+  .grid{display:grid;gap:20px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .card img{width:100%;display:block}
+  .card .pad{padding:16px 18px}
+  .name{font-size:20px;letter-spacing:.08em}
+  .role{font-size:12px;color:var(--sub);letter-spacing:.16em;margin:2px 0 10px}
+  .quote{color:#dfe9f6;font-size:15px}
+  .still{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .still img{width:100%;display:block;transition:transform .6s ease}
+  .still:hover img{transform:scale(1.05)}
+  .kv img{width:100%;display:block;border-radius:16px;border:1px solid var(--line)}
+  .split{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+  .facts{list-style:none;margin:0;padding:0}
+  .facts li{display:flex;gap:14px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .facts b{color:var(--gold);min-width:96px;font-weight:400}
+  .theory{background:linear-gradient(120deg,rgba(127,216,255,.08),rgba(242,166,90,.08));border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+  .theory h3{margin:0 0 10px;font-size:20px}
+  .theory .pill{display:inline-block;font-size:12px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:2px 12px;margin-right:8px}
+  .quotes blockquote{margin:0;padding:16px 20px;border-left:3px solid var(--gold);background:var(--card);border-radius:0 12px 12px 0;color:#e7eefb;font-size:16px}
+  .tags span{display:inline-block;margin:6px 8px 0 0;padding:5px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--sub)}
+  video{width:100%;display:block;border-radius:16px;border:1px solid var(--line);background:#000;aspect-ratio:16/9}
+  footer{padding:48px 0;color:var(--sub);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+  .dl a{display:block;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  @media(max-width:820px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}}
+  @media(max-width:560px){.g2,.g3,.g4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bg"></div><div class="veil"></div>
+  <div class="inner">
+    <div class="kick">原创 2D 微动漫 · 校园心理成长</div>
+    <h1 class="serif">满分的我</h1>
+    <div class="en serif">THE&nbsp;PERFECT&nbsp;ME</div>
+    <div class="rule"></div>
+    <p class="tag serif">如果所有人都喜欢那个完美的我，谁来喜欢真正的我？</p>
+    <div class="meta">高一1班 · 朱明萱 ｜ 片长 3′30″</div>
+    <div class="cta">
+      <a class="btn solid" href="#trailer">▶ 观看预告片</a>
+      <a class="btn" href="#story">作品简介</a>
+      <a class="btn" href="#info">作品信息</a>
+    </div>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap">
+    <h2 class="serif">故事梗概<span class="en">STORY</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead">高一男生林一，是班里「人缘很好、成绩不错」的那类人。社交平台上，他的照片被无数个赞包围，所有人都说他「过得真好」；可镜头拉近，他独自坐在洗手间隔间里，屏幕里是阳光灿烂的自拍，脸上却没有笑。</p>
+        <p class="lead">他把考砸的试卷塞进书包，删掉照片里疲惫的表情，对着镜头练习笑容——每一个真实的瞬间，都被剪成一张完美的照片。由「想被喜欢」的渴望凝聚而成的虚拟自我「一林」不断提醒他：别让他们看出你不开心。</p>
+        <p class="lead">他越来越努力，却越来越不喜欢自己。直到朋友陈晓一句「<span class="warm">那你不用在我面前装没事</span>」，让他第一次发现——真实的自己，也可以被接纳。</p>
+        <p class="lead gold serif">你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</p>
+      </div>
+      <div class="card"><img src="../01-主视觉/角色卡-林一.png" alt="林一"></div>
+    </div>
+  </div>
+</section>
+
+<section id="chars">
+  <div class="wrap">
+    <h2 class="serif">角色<span class="en">CHARACTERS</span></h2>
+    <div class="grid g3">
+      <div class="card"><img src="../01-主视觉/角色卡-林一.png" alt="林一"><div class="pad"><div class="name serif">林一</div><div class="role">现实自我 · 主人公</div><div class="quote">“那如果我今天不开心呢？”</div></div></div>
+      <div class="card"><img src="../01-主视觉/角色卡-一林.png" alt="一林"><div class="pad"><div class="name serif">一林</div><div class="role">理想 / 应该自我 · 完美倒影</div><div class="quote">“那就不要让他们看出来。”</div></div></div>
+      <div class="card"><img src="../01-主视觉/角色卡-陈晓.png" alt="陈晓"><div class="pad"><div class="name serif">陈晓</div><div class="role">朋友 · 陪伴者</div><div class="quote">“那你不用在我面前装没事。”</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="stills">
+  <div class="wrap">
+    <h2 class="serif">剧照<span class="en">STILLS</span></h2>
+    <div class="grid g3">
+      <div class="still"><img src="../../04-分镜图/镜头/S02-点赞特写.png" alt="点赞特写"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S03-洗手间林一.png" alt="洗手间林一"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S08-完美九宫格.png" alt="完美九宫格"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S10-虚拟自我登场.png" alt="虚拟自我登场"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S11-明暗分屏.png" alt="明暗分屏"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S14-镜面包围.png" alt="镜面包围"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S27-真实的笑.png" alt="真实的笑"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S29-黄昏奔跑.png" alt="黄昏奔跑"></div>
+      <div class="still"><img src="../../04-分镜图/镜头/S32-片尾定格.png" alt="片尾定格"></div>
+    </div>
+  </div>
+</section>
+
+<section id="theory">
+  <div class="wrap">
+    <h2 class="serif">主题 · 自我差异理论<span class="en">THEORY</span></h2>
+    <div class="theory">
+      <h3 class="serif">现实的我 · 理想中的我 · 我以为必须成为的我</h3>
+      <p><span class="pill">心理学</span><span class="pill">Higgins, 1987</span></p>
+      <p class="lead">自我差异理论指出：当现实中的自己与「理想自我 / 应该自我」存在较大落差时，可能产生失望、焦虑、压力或内疚等感受。影片中的林一并非单纯沉迷手机——他渐渐相信，只有那个永远优秀、永远快乐、永远不犯错的自己，才值得被喜欢。网络只是放大了这种差异的舞台，真正困住他的，是他开始用一个不可能长期维持的标准，审判真实的自己。</p>
+    </div>
+  </div>
+</section>
+
+<section id="trailer">
+  <div class="wrap">
+    <h2 class="serif">预告片<span class="en">TRAILER</span></h2>
+    <video controls preload="metadata" poster="../01-主视觉/主视觉-横版.png">
+      <source src="../03-预告片/满分的我-预告片.mp4" type="video/mp4">
+      您的浏览器不支持视频播放。
+    </video>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <h2 class="serif">作品信息<span class="en">INFO</span></h2>
+    <div class="split">
+      <ul class="facts">
+        <li><b>作品名称</b><span>满分的我（The Perfect Me）</span></li>
+        <li><b>作品类别</b><span>微动漫 · 原创 2D 动画</span></li>
+        <li><b>参赛信息</b><span>高一1班 · 朱明萱</span></li>
+        <li><b>题材类型</b><span>校园心理 · 成长 · 青少年成长</span></li>
+        <li><b>核心理论</b><span>自我差异理论（Self-Discrepancy Theory, Higgins 1987）</span></li>
+        <li><b>主要角色</b><span>林一（现实自我）· 一林（理想/应该自我）· 陈晓（朋友）</span></li>
+        <li><b>播放时长</b><span>约 3 分 30 秒（≤ 5 分钟）</span></li>
+        <li><b>文件格式</b><span>MP4 / H.264 / AAC，≤ 200MB</span></li>
+        <li><b>画面风格</b><span>轻薄半赛璐 / 淡彩赛璐（Soft Cel + Paper Texture）</span></li>
+        <li><b>制作工具</b><span>Qwen-Image-2.1 · ACE-Step · Qwen3-TTS · Krita · OpenToonz · Kdenlive · FFmpeg</span></li>
+      </ul>
+      <div class="kv"><img src="../01-主视觉/作品信息卡.png" alt="作品信息卡"></div>
+    </div>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="still"><img src="../01-主视觉/主海报-竖版.png" alt="主海报"></div>
+      <div class="still"><img src="../01-主视觉/剧照九宫格.png" alt="剧照九宫格"></div>
+      <div class="still"><img src="../01-主视觉/展架-易拉宝.png" alt="展架"></div>
+    </div>
+  </div>
+</section>
+
+<section id="quotes">
+  <div class="wrap">
+    <h2 class="serif">金句<span class="en">LINES</span></h2>
+    <div class="grid g2 quotes">
+      <blockquote>“他们都说，我过得真好。”</blockquote>
+      <blockquote>“那如果我今天不开心呢？” —— “那就不要让他们看出来。”</blockquote>
+      <blockquote>“可我越来越努力，为什么越来越不喜欢自己？”</blockquote>
+      <blockquote>“那如果我们不完美了呢？” —— “那我们就做一个不完美的人。”</blockquote>
+      <blockquote class="gold" style="border-color:var(--warm)">“那你不用在我面前装没事。”</blockquote>
+      <blockquote class="gold" style="border-color:var(--warm)">“这次，不拍下来吗？” —— “不用。记得就好了。”</blockquote>
+    </div>
+    <p class="tags" style="margin-top:26px">
+      <span>#满分的我</span><span>#校园心理</span><span>#自我差异理论</span><span>#青少年成长</span>
+      <span>#原创动画</span><span>#微动漫</span><span>#治愈</span><span>#真实的我</span>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="serif gold" style="font-size:18px">你可以努力成为更好的自己，但不必先变得完美，才配得到认可。</p>
+    <p>《满分的我》 ｜ 高一1班 · 朱明萱 ｜ 原创 2D 微动漫</p>
+    <p>角色、场景、台词、分镜、提示词均为原创；图像 / 配乐 / 配音由本地开源模型生成，不含第三方下载素材。</p>
+    <p>© 2026 朱明萱 · 保留所有权利</p>
+  </div>
+</footer>
+
+</body>
+</html>
