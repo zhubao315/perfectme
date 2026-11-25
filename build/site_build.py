@@ -49,7 +49,7 @@ def main():
         if os.path.exists(p):
             jpg(p, f"still-{i:02d}.jpg", 1500)
     cp(f"{ROOT}/08-宣传物料/03-预告片/满分的我-预告片.mp4", "trailer.mp4")
-    cp(f"{ROOT}/07-成片/满分的我(配音版).mp4", "film.mp4")
+    cp(f"{ROOT}/07-成片/满分的我-动画版-H3.mp4", "film.mp4")
     for name, dst in [("林一", "voice-linyi"), ("一林", "voice-yilin"),
                       ("陈晓", "voice-chenxiao"), ("旁白", "voice-narrator")]:
         mp3(f"{ROOT}/05-音频/配音/试音/{name}.wav", dst + ".mp3")
