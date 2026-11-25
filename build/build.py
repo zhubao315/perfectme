@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 from scene import SHOTS, TR
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMG = os.path.join(ROOT, "04-分镜图")
 BUILD = os.path.join(ROOT, "build")
 CLIPS = os.path.join(BUILD, "clips")
@@ -133,7 +133,7 @@ def make_title_card():
     ctext("The Perfect Me", 38, 466, (176, 198, 218))
     ctext("如果所有人都喜欢那个完美的我，", 46, 560, (200, 214, 228))
     ctext("谁来喜欢真正的我？", 46, 626, (200, 214, 228))
-    ctext("高一 1 班 · 朱 明 萱", 52, 748, (240, 200, 144))
+    ctext("原创 2D 微动漫", 52, 748, (240, 200, 144))
 
     path = os.path.join(CARDS, "title.png")
     canvas.save(path)
@@ -154,7 +154,7 @@ def make_end_card():
     d.line([(W / 2 - 230, 594), (W / 2 + 230, 594)], fill=(240, 200, 144), width=2)
     ctext("Thank you for watching", 40, 632, (176, 198, 218))
     draw_heart(d, W / 2, 726, 18, (255, 90, 95))
-    ctext("《满分的我》 · 高一 1 班 朱明萱", 36, 760, (150, 175, 196))
+    ctext("《满分的我》 · 原创 2D 微动漫", 36, 760, (150, 175, 196))
 
     path = os.path.join(CARDS, "end_thanks.png")
     canvas.save(path)
@@ -353,9 +353,6 @@ CREDITS = [
     ("s", "The Perfect Me", 40, (170, 190, 210), FONT, 8),
     ("q", "如果所有人都喜欢那个完美的我，谁来喜欢真正的我？", 38, (190, 205, 220), FONT, 20),
     ("gap", 60),
-    ("h", "编 剧 · 导 演 · 分 镜 · 美 术", 40, (240, 200, 144), FONT, 0),
-    ("b", "朱 明 萱", 56, (255, 255, 255), SERIF, 14),
-    ("s", "高一 1 班", 36, (170, 190, 210), FONT, 20),
     ("gap", 66),
     ("h", "本片揭示的 心理学理念", 42, (240, 200, 144), FONT, 0),
     ("b", "自 我 差 异 理 论", 64, (255, 255, 255), SERIF, 16),
@@ -390,7 +387,7 @@ CREDITS = [
     ("s", "你可以努力成为更好的自己，但不必完美，才值得被喜欢。", 40, (190, 205, 220), FONT, 10),
     ("gap", 70),
     ("s", "本片为原创校园心理微动漫，角色 / 剧情 / 分镜 / 提示词均为原创", 32, (140, 165, 190), FONT, 0),
-    ("s", "© 2026  高一 1 班 · 朱明萱 ·《满分的我》", 34, (150, 175, 196), FONT, 14),
+    ("s", "© 2026 ·《满分的我》", 34, (150, 175, 196), FONT, 14),
     ("s", "原创作品 · 请勿盗用", 30, (120, 145, 170), FONT, 12),
 ]
 
@@ -559,7 +556,7 @@ def main():
     # 空气感 + 纸感（分层微动）：柔和漫射光缓慢漂移 + 受亮度约束的纸纹颗粒，再烧入呼吸字幕
     light = make_light_overlay()
     paper = make_paper_overlay()
-    out = os.path.join(OUT, "高一1班-朱明萱-满分的我.mp4")
+    out = os.path.join(OUT, "满分的我.mp4")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
          "-i", visual, "-loop", "1", "-i", light, "-loop", "1", "-i", paper, "-i", music,
          "-filter_complex",

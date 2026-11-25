@@ -3,3 +3,11 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# H3 中间产物（清单与生成日志保留，便于复现核对）
+build/h3_clips/
+build/h3_segments/
+build/h3_generate_console.log
+
+# 重渲染日志
+build/rerender_*.log

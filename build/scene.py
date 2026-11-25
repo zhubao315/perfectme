@@ -13,7 +13,7 @@
 import json
 import os
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "build")
 TIMELINE = os.path.join(BUILD, "timeline.json")
 TR = 0.5

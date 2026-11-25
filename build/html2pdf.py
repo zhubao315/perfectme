@@ -7,8 +7,10 @@
 import pathlib
 from playwright.sync_api import sync_playwright
 
-SRC = "/oc/mov/00-文档总览.html"
-OUT = "/oc/mov/00-文档总览.pdf"
+import os
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(ROOT, "00-文档总览.html")
+OUT = os.path.join(ROOT, "00-文档总览.pdf")
 
 with sync_playwright() as p:
     b = p.chromium.launch(args=["--no-sandbox", "--disable-gpu"])

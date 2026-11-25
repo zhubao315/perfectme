@@ -3,7 +3,7 @@
 """根据已生成的片段生成可编辑工程文件（MLT，可被 Kdenlive / Shotcut 打开）"""
 import os, glob, subprocess, json
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "build")
 CLIPS = os.path.join(BUILD, "clips")
 OUTDIR = os.path.join(ROOT, "06-工程源文件")

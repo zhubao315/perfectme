@@ -15,13 +15,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import scene  # noqa
 from tts_dub import LINES, OUT_DIR, SR  # noqa
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, "build")
 MULTI = os.path.join(ROOT, "05-音频", "多轨")
 SFXDIR = os.path.join(BUILD, "sfx")
 BGM = os.path.join(BUILD, "music.wav")
-VIDEO_IN = os.path.join(ROOT, "07-成片", "高一1班-朱明萱-满分的我.mp4")
-VIDEO_OUT = os.path.join(ROOT, "07-成片", "高一1班-朱明萱-满分的我(配音版).mp4")
+VIDEO_IN = os.path.join(ROOT, "07-成片", "满分的我.mp4")
+VIDEO_OUT = os.path.join(ROOT, "07-成片", "满分的我(配音版).mp4")
 MIX = os.path.join(BUILD, "mix.wav")
 
 

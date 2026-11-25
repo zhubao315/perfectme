@@ -17,7 +17,7 @@ import array
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import scene  # noqa
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "05-音频", "配音")
 AUD_DIR = os.path.join(OUT_DIR, "试音")
 TRACK = os.path.join(ROOT, "build", "voice.wav")

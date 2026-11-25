@@ -7,7 +7,7 @@
 """
 import os, re, subprocess
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "06-工程源文件", "满分的我-工程.mlt")
 DST = os.path.join(ROOT, "06-工程源文件", "满分的我-配音版.mlt")
 MULTI = os.path.join(ROOT, "05-音频", "多轨")

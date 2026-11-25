@@ -8,7 +8,7 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = "/oc/mov"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMG = os.path.join(ROOT, "images")
 OUT = os.path.join(ROOT, "09-文档配图")
 FT = "/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc"
