@@ -7,8 +7,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,Microsoft YaHei,46,&H00FFFFFF,&H0080C8F0,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,2,2,60,60,70,1
-Style: Narr,Microsoft YaHei,42,&H00F0E6D8,&H0080C8F0,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,2,2,60,60,70,1
+Style: Sub,Microsoft YaHei,64,&H00FFFFFF,&H0080C8F0,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,3,2,2,60,60,70,1
+Style: Narr,Microsoft YaHei,58,&H00F0E6D8,&H0080C8F0,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,3,2,2,60,60,70,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

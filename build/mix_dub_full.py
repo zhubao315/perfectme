@@ -62,13 +62,9 @@ def main():
     M.run(['ffmpeg', '-y', '-v', 'error', '-stream_loop', '-1', '-i', M.BGM,
            '-t', f'{total:.3f}', '-ar', str(M.SR), '-ac', '1', a4])
     a5 = os.path.join(MULTI, 'sfx.wav')
-    src_starts = scene.load_starts()
-    sf = []
-    for sid, off, name, gain in scene.SFX:
-        p = os.path.join(os.path.join(ROOT, 'build', 'sfx'), name + '.wav')
-        if os.path.isfile(p):
-            sf.append((p, src_starts.get(sid, 0) * SCALE + off * SCALE, gain))
-    M.build_stem(sf, total, a5)
+    # 去掉全部程序化音效（含刺啦/电流/玻璃摩擦声），只保留对白 + BGM
+    M.run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i',
+           f'anullsrc=r={M.SR}:cl=mono', '-t', f'{total:.3f}', a5])
 
     fc = (
         '[0:a][1:a][2:a][3:a]amix=inputs=4:normalize=0,'

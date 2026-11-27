@@ -21,3 +21,4 @@ build/h3_generate_console.log
 
 # 重渲染日志
 build/rerender_*.log
+build/h3_image/before_consistency/

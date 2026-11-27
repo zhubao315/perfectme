@@ -19,6 +19,12 @@ v2（H3-Image 生图 + 1.6× 视频 + 原配音）存在三个问题：
 | 配音 | 复用 26 条已生成的 Qwen3-TTS 配音文件，**每句按自然时长完整播放、不做 atempo 压缩**；后续台词顺延 0.25s 避免重叠；BGM 循环铺满；响度 −16 LUFS。V26 已存在，全部 26 句齐全。 |
 | 字幕 | 由 `mix_full_plan.json` 的实际排程生成 ASS（`build/subs_full.ass`），时间点与配音**逐句精确对齐**，关键词暖金渐变。 |
 
+## v3.1 修订（人物一致性 / 字幕 / 音效）
+
+- **人物一致性**：23 个含人物镜头用 Qwen-Image `/images/edits` 双图参考重生成——第 1 张 image 是当前分镜图（保构图），第 2 张是角色主形象（锁长相）。脚本 `build/h3_image/enforce_consistency.py`，参考图 `角色/林一-主形象.png` / `三人设定表.png`，重生成前备份在 `build/h3_image/before_consistency/`。效果：所有林一镜头统一为同一张脸（圆脸、杏眼、短碎发、深蓝水手服）；陈晓统一；一林保留青蓝描边与发光满环设定。
+- **字幕加大**：`make_subs_full.py` 字号 Sub 46→**64**、Narr 42→**58**，描边 2→3。
+- **去掉刺啦音效**：`mix_dub_full.py` 不再混入任何程序化音效（notif/glass/pixel/vacuum 等全部移除），只保留对白 + BGM。
+
 ## 关键修复记录
 
 - Qwen `/images/edits` 只接受 `model/prompt/steps/seed/n/image[]`；传 `negative_prompt` 或 `size` 会 400。
