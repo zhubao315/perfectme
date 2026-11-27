@@ -1,0 +1,200 @@
+{
+  "场景/场景-教室.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1516952,
+    "seconds": 26.1
+  },
+  "场景/场景-洗手间.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1461332,
+    "seconds": 4.0
+  },
+  "场景/场景-深夜书桌.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1352666,
+    "seconds": 4.1
+  },
+  "场景/场景-黄昏操场.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1456163,
+    "seconds": 4.1
+  },
+  "场景/开场背景.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1414379,
+    "seconds": 4.1
+  },
+  "角色/三人设定表.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1152325,
+    "seconds": 4.1
+  },
+  "角色/林一-主形象.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1273392,
+    "seconds": 4.1
+  },
+  "镜头/S02-点赞特写.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1195747,
+    "seconds": 4.1
+  },
+  "镜头/S03-洗手间林一.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1320845,
+    "seconds": 4.1
+  },
+  "镜头/S03b-洗手间-更消沉.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1601332,
+    "seconds": 6.1
+  },
+  "镜头/S04-试卷塞书包.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1509277,
+    "seconds": 4.1
+  },
+  "镜头/S06-练习笑容.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1374775,
+    "seconds": 4.4
+  },
+  "镜头/S06b-假笑.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1589869,
+    "seconds": 6.1
+  },
+  "镜头/S07-深夜写作业.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1472088,
+    "seconds": 4.1
+  },
+  "镜头/S08-完美九宫格.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1225493,
+    "seconds": 4.1
+  },
+  "镜头/S10-虚拟自我登场.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1360112,
+    "seconds": 4.0
+  },
+  "镜头/S10b-抬头看虚影.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1660136,
+    "seconds": 6.1
+  },
+  "镜头/S11-明暗分屏.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1340566,
+    "seconds": 4.1
+  },
+  "镜头/S14-镜面包围.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1415248,
+    "seconds": 4.1
+  },
+  "镜头/S15-捂耳朵.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1444227,
+    "seconds": 4.1
+  },
+  "镜头/S15b-更痛苦.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1709181,
+    "seconds": 6.1
+  },
+  "镜头/S17-触碰镜面.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1481160,
+    "seconds": 4.1
+  },
+  "镜头/S19-理论示意.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1280443,
+    "seconds": 16.1
+  },
+  "镜头/S22-暖色光点.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1437171,
+    "seconds": 4.1
+  },
+  "镜头/S22b-释然微笑.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1651648,
+    "seconds": 6.1
+  },
+  "镜头/S26-陈晓伸手.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1387697,
+    "seconds": 4.1
+  },
+  "镜头/S26b-伸手动作.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1694385,
+    "seconds": 6.1
+  },
+  "镜头/S27-真实的笑.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1493821,
+    "seconds": 4.1
+  },
+  "镜头/S27b-笑更盛.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1738207,
+    "seconds": 6.1
+  },
+  "镜头/S29-黄昏奔跑.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1466305,
+    "seconds": 4.1
+  },
+  "镜头/S31-放下手机.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1496105,
+    "seconds": 4.1
+  },
+  "镜头/S31b-放下手机.png": {
+    "status": "done",
+    "mode": "edit",
+    "size": 1664018,
+    "seconds": 6.1
+  },
+  "镜头/S32-片尾定格.png": {
+    "status": "done",
+    "mode": "generate",
+    "size": 1195070,
+    "seconds": 4.1
+  }
+}

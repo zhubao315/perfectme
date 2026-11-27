@@ -51,7 +51,7 @@ def prepare_image(src, name):
     return dst
 
 
-def make_prompt(shot, first_name, last_name):
+def make_prompt(shot, first_name, last_name, prefix="pmf_"):
     p = json.load(open(TEMPLATE, encoding="utf-8"))
     p["901"] = {"class_type": "LoadImage", "inputs": {"image": first_name}}
     p["139"]["inputs"].update({
@@ -65,7 +65,7 @@ def make_prompt(shot, first_name, last_name):
         p["902"] = {"class_type": "LoadImage", "inputs": {"image": last_name}}
         p["139"]["inputs"]["last_frame"] = ["902", 0]
     p["137"]["inputs"]["noise_seed"] = shot["seed"]
-    p["900"]["inputs"]["filename_prefix"] = "video/pmf_" + shot["shot_id"]
+    p["900"]["inputs"]["filename_prefix"] = "video/" + prefix + shot["shot_id"]
     return p
 
 
@@ -98,27 +98,33 @@ def main():
     ap.add_argument("--shots", nargs="*", help="shot ids, e.g. s03 s04")
     ap.add_argument("--limit", type=int, help="generate first N shots only")
     ap.add_argument("--force", action="store_true", help="regenerate shots marked done")
+    ap.add_argument("--manifest", default=MANIFEST)
+    ap.add_argument("--clips", default=CLIPS)
+    ap.add_argument("--log", default=LOG)
+    ap.add_argument("--prefix", default="pmf_")
     args = ap.parse_args()
+    CLIPS_DIR = args.clips
+    LOG_PATH = args.log
 
-    shots = json.load(open(MANIFEST, encoding="utf-8"))
+    shots = json.load(open(args.manifest, encoding="utf-8"))
     if args.shots:
         shots = [s for s in shots if s["shot_id"] in args.shots]
     if args.limit:
         shots = shots[:args.limit]
-    os.makedirs(CLIPS, exist_ok=True)
-    log = json.load(open(LOG, encoding="utf-8")) if os.path.isfile(LOG) else {}
+    os.makedirs(CLIPS_DIR, exist_ok=True)
+    log = json.load(open(LOG_PATH, encoding="utf-8")) if os.path.isfile(LOG_PATH) else {}
 
     for shot in shots:
         sid = shot["shot_id"]
         if log.get(sid, {}).get("status") == "done" and not args.force:
             print(f"SKIP {sid} (already done)", flush=True)
             continue
-        first = f"pmf_{sid}.png"
-        last = f"pmf_{sid}_last.png" if shot.get("src2") else None
+        first = f"{args.prefix}{sid}.png"
+        last = f"{args.prefix}{sid}_last.png" if shot.get("src2") else None
         prepare_image(os.path.join(ROOT, "04-分镜图", shot["src"]), first)
         if last:
             prepare_image(os.path.join(ROOT, "04-分镜图", shot["src2"]), last)
-        prompt = make_prompt(shot, first, last)
+        prompt = make_prompt(shot, first, last, args.prefix)
         print(f"START {sid} len={shot['length']} last_frame={bool(last)}", flush=True)
         try:
             pid = api("/prompt", {"prompt": prompt, "front": True})["prompt_id"]
@@ -126,7 +132,7 @@ def main():
             video = find_video(outputs)
             if not video:
                 raise RuntimeError("no video in outputs: " + json.dumps(outputs, ensure_ascii=False)[:1000])
-            dst = os.path.join(CLIPS, sid + ".mp4")
+            dst = os.path.join(CLIPS_DIR, sid + ".mp4")
             shutil.copy2(video, dst)
             log[sid] = {"status": "done", "pid": pid, "file": dst,
                         "prompt": shot["prompt"], "length": shot["length"],
@@ -135,7 +141,7 @@ def main():
         except Exception as ex:
             log[sid] = {"status": "error", "error": str(ex)[:2000]}
             print(f"ERROR {sid}: {ex}", flush=True)
-        with open(LOG, "w", encoding="utf-8") as f:
+        with open(LOG_PATH, "w", encoding="utf-8") as f:
             json.dump(log, f, ensure_ascii=False, indent=2)
     print("ALL FINISHED", flush=True)
 

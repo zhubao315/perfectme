@@ -7,6 +7,16 @@ Thumbs.db
 # H3 中间产物（清单与生成日志保留，便于复现核对）
 build/h3_clips/
 build/h3_segments/
+build/h3_clips_long/
+build/h3_segments_long/
+build/h3_clips_qwen/
+build/h3_segments_qwen/
+build/h3_full_audio/
+build/h3_image/qwen_original_backup/
+build/mix_full_raw.wav
+build/h3_long_audio/
+build/h3_image/original_backup/
+build/mix_long_raw.wav
 build/h3_generate_console.log
 
 # 重渲染日志

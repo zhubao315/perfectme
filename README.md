@@ -8,7 +8,7 @@
   <p>
     <a href="https://zhubao315.github.io/perfectme/"><img src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-perfectme-7FD8FF?logo=githubpages&logoColor=white" alt="在线网站"></a>
     <img src="https://img.shields.io/badge/%E7%B1%BB%E5%9E%8B-%E5%8E%9F%E5%88%9B%202D%20%E5%BE%AE%E5%8A%A8%E6%BC%AB-F0C888" alt="原创2D微动漫">
-    <img src="https://img.shields.io/badge/%E6%97%B6%E9%95%BF-3%2730%22-5B6B7C" alt="时长">
+    <img src="https://img.shields.io/badge/%E6%97%B6%E9%95%BF-3%2707%22-5B6B7C" alt="时长">
     <img src="https://img.shields.io/badge/%E4%B8%BB%E9%A2%98-%E6%A0%A1%E5%9B%AD%E5%BF%83%E7%90%86%C2%B7%E6%88%90%E9%95%BF-7FD8FF" alt="主题">
     <img src="https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-9FB2CA" alt="中文">
   </p>
@@ -36,14 +36,15 @@
 
 > **99 个赞，0 个人知道他不开心。** 他把自己修得完美无缺，却越来越不喜欢自己——直到朋友一句"那你不用在我面前装没事"。
 
-《满分的我》是一部约 **2 分 31 秒**的**原创 2D 微动漫**。以 **自我差异理论**（Self-Discrepancy Theory, Higgins 1987）为内核，讲述每个在"别人眼中的我"与"真实的我"之间拉扯的少年。作品想说的不是"不要努力"，而是——**你可以努力成为更好的自己，但不必先变得完美，才配得到认可。**
+《满分的我》最新版约 **3 分 07 秒**（Qwen-Image 生图 + MiniMax H3 图生视频 + 完整不压缩配音），原配音版 2 分 31 秒；是一部**原创 2D 微动漫**。以 **自我差异理论**（Self-Discrepancy Theory, Higgins 1987）为内核，讲述每个在"别人眼中的我"与"真实的我"之间拉扯的少年。作品想说的不是"不要努力"，而是——**你可以努力成为更好的自己，但不必先变得完美，才配得到认可。**
 
 ## 🌐 在线访问
 
 | | |
 |---|---|
 | 🖥️ **宣传网站** | **<https://zhubao315.github.io/perfectme/>** |
-| 🎬 成片（**MiniMax H3 动画版**） | [`07-成片/满分的我-动画版-H3.mp4`](07-成片/满分的我-动画版-H3.mp4) ｜ 制作说明见 [`11-动画版H3制作说明.md`](11-动画版H3制作说明.md) |
+| 🎬 成片（**Qwen 生图 + H3 视频 + 完整配音**） | [`07-成片/满分的我-动画版-H3-加长版.mp4`](07-成片/满分的我-动画版-H3-加长版.mp4)（约 3′07″，26 句配音完整不压缩）｜ 制作说明见 [`13-Qwen生图与完整配音重制说明.md`](13-Qwen生图与完整配音重制说明.md) |
+| 🎬 上一版（152 秒） | [`07-成片/满分的我-动画版-H3.mp4`](07-成片/满分的我-动画版-H3.mp4) ｜ [`11-动画版H3制作说明.md`](11-动画版H3制作说明.md) |
 | 🎬 网站播放的成片 | **H3 动画版（最终版）** · <https://zhubao315.github.io/perfectme/10-宣传网站/> |
 | 📄 文档总览（网页/PDF） | [`00-文档总览.html`](00-文档总览.html) ｜ [`00-文档总览.pdf`](00-文档总览.pdf) |
 
