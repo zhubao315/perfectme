@@ -31,8 +31,8 @@ if not os.path.exists(FBD):
 TITLE = "满分的我"
 EN = "THE PERFECT ME"
 TAG = "如果所有人都喜欢那个完美的我，谁来喜欢真正的我？"
-CREDIT = "微动漫 · 校园心理成长 ｜ 片长 2′31″"
-TOOLS = "原创图像 Qwen-Image-2.1 · 配乐 ACE-Step · 配音 Qwen3-TTS · 绘修 Krita · 动画 OpenToonz · 剪辑 Kdenlive/FFmpeg"
+CREDIT = "微动漫 · 校园心理成长 ｜ 片长 3′10″ · Qwen生图+H3动画"
+TOOLS = "图像 Qwen-Image-2.1 · 动画 MiniMax-H3 · 配乐 ACE-Step · 配音 Qwen3-TTS · 剪辑 FFmpeg"
 
 
 def f(path, size):
@@ -108,7 +108,7 @@ def poster_vertical():
         ctext(d, cx, 560 + i * 62, ln, f(FB, 44), (240, 244, 250, 245), stroke=2, sc=(0, 0, 0, 120))
     # 底部信息
     ctext(d, cx, H - 150, "现实的我 · 理想中的我 · 我以为必须成为的我", f(FB, 36), (235, 240, 248, 240))
-    ctext(d, cx, H - 96, "片长 2′31″", f(FBD, 38), (255, 236, 200, 245))
+    ctext(d, cx, H - 96, "片长 3′10″", f(FBD, 38), (255, 236, 200, 245))
     ctext(d, cx, H - 44, "自我差异理论 Self-Discrepancy Theory · Higgins 1987", f(FB, 26), (190, 205, 222, 220))
     p = os.path.join(VIS, "主海报-竖版.png")
     img.convert("RGB").save(p)
@@ -194,7 +194,7 @@ def nine_grid():
         im = cover(Image.open(os.path.join(SHOTS, nm + ".png")).convert("RGB"), (cell, cell))
         canvas.paste(im, (x, y))
         d.rectangle([x, y, x + cell - 1, y + cell - 1], outline=(255, 255, 255), width=3)
-    ctext(d, W // 2, H - 40, "校园心理成长 ｜ 片长 2′31″", f(FB, 28), (110, 120, 135))
+    ctext(d, W // 2, H - 40, "校园心理成长 ｜ 片长 3′10″", f(FB, 28), (110, 120, 135))
     p = os.path.join(VIS, "剧照九宫格.png")
     canvas.save(p)
     print("grid:", p)
@@ -225,7 +225,7 @@ def rollup():
         "你可以努力成为更好的自己，但不必先变得完美，才配得到认可。",
         "",
         "类别：微动漫（原创 2D 动画）",
-        "播放时长：约 2 分 31 秒",
+        "播放时长：约 3 分 10 秒",
         "制作：Qwen-Image-2.1 · ACE-Step · Qwen3-TTS · Krita · OpenToonz · Kdenlive · FFmpeg",
     ]:
         fnt = f(FB, 30)
@@ -256,7 +256,7 @@ def info_card():
         ("题材类型", "校园心理 · 成长 · 原创 2D 动漫"),
         ("核心理论", "自我差异理论（Higgins, 1987）"),
         ("主要角色", "林一（现实自我）· 一林（理想/应该自我）· 陈晓（朋友）"),
-        ("播放时长", "约 2 分 31 秒（≤5 分钟）"),
+        ("播放时长", "约 3 分 10 秒（≤5 分钟）"),
         ("文件格式", "MP4 / H.264 / AAC，≤200MB"),
         ("主题立意", "你可以努力成为更好的自己，但不必先变得完美，才配得到认可。"),
         ("原创声明", "角色、场景、台词、分镜、提示词均为原创；图像/配乐/配音由本地开源模型生成。"),
@@ -283,7 +283,7 @@ def wechat_banner():
     d = ImageDraw.Draw(base)
     d.text((46, 120), TITLE, font=f(FT, 96), fill=(255, 255, 255), stroke_width=3, stroke_fill=(30, 50, 80))
     d.text((50, 236), "原创 2D 微动漫 · 校园心理成长", font=f(FB, 30), fill=(226, 236, 248))
-    d.text((50, 284), "片长 2′31″", font=f(FBD, 30), fill=(255, 236, 200))
+    d.text((50, 284), "片长 3′10″", font=f(FBD, 30), fill=(255, 236, 200))
     p = os.path.join(VIS, "公众号头图-900x383.png")
     base.convert("RGB").save(p)
     print("wechat:", p)
@@ -315,7 +315,7 @@ def poster_characters():
         for k, ln in enumerate(wrap(d, f"“{qt}”", f(FB, 23), pw + 46)):
             ctext(d, x + pw // 2, y0 + ph + 156 + k * 32, ln, f(FB, 23), (220, 230, 242, 240))
     ctext(d, cx, H - 158, "自我差异理论 Self-Discrepancy Theory · Higgins 1987", f(FB, 28), (190, 205, 222, 230))
-    ctext(d, cx, H - 100, "片长 2′31″", f(FBD, 42), (255, 236, 200, 248))
+    ctext(d, cx, H - 100, "片长 3′10″", f(FBD, 42), (255, 236, 200, 248))
     ctext(d, cx, H - 46, "《满分的我》 THE PERFECT ME", f(FB, 28), (200, 214, 230, 225))
     p = os.path.join(VIS, "主海报-竖版2-三角色.png")
     img.convert("RGB").save(p)
@@ -339,7 +339,7 @@ def poster_warm():
     y = H - 540
     for i, ln in enumerate(lines):
         ctext(d, cx, y + i * 64, ln, f(FB, 48), (255, 255, 255, 255), stroke=2, sc=(70, 35, 0, 170))
-    ctext(d, cx, H - 150, "片长 2′31″", f(FBD, 40), (255, 240, 210, 250), stroke=2, sc=(70, 35, 0, 150))
+    ctext(d, cx, H - 150, "片长 3′10″", f(FBD, 40), (255, 240, 210, 250), stroke=2, sc=(70, 35, 0, 150))
     ctext(d, cx, H - 92, "现实的我 · 理想中的我 · 我以为必须成为的我", f(FB, 30), (255, 246, 236, 240), stroke=2, sc=(70, 35, 0, 130))
     ctext(d, cx, H - 44, "自我差异理论 · Higgins 1987", f(FB, 26), (255, 238, 214, 230), stroke=2, sc=(70, 35, 0, 120))
     p = os.path.join(VIS, "主海报-竖版3-暖色.png")
